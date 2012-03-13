@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: git | ZoOL => Blog]]></title>
-  <link href="http://foxzool.github.com/categories/git/atom.xml" rel="self"/>
-  <link href="http://foxzool.github.com/"/>
-  <updated>2012-03-14T00:12:10+08:00</updated>
-  <id>http://foxzool.github.com/</id>
+  <link href="http://zool.me/categories/git/atom.xml" rel="self"/>
+  <link href="http://zool.me/"/>
+  <updated>2012-03-14T01:22:41+08:00</updated>
+  <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
     <email><![CDATA[zhooul@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[gitignore模板库]]></title>
-    <link href="http://foxzool.github.com/git/2010/12/17/gitignore-template-library"/>
+    <link href="http://zool.me/git/2010/12/17/gitignore-template-library"/>
     <updated>2010-12-17T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/git/2010/12/17/gitignore-template-library</id>
+    <id>http://zool.me/git/2010/12/17/gitignore-template-library</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/github/gitignore">github地址</a></p>
 
 <p>rails3项目新建时，会在项目根目录下生成.gitignore文件，这个文件是用来忽略那些不需要提交的文件。</p>
@@ -43,9 +43,9 @@
   
   <entry>
     <title type="html"><![CDATA[应用gitflow建立代码开发标准化流程]]></title>
-    <link href="http://foxzool.github.com/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow"/>
+    <link href="http://zool.me/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow"/>
     <updated>2010-12-17T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow</id>
+    <id>http://zool.me/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/nvie/gitflow">github地址</a></p>
 
 <p>简单的来说就是几步</p>

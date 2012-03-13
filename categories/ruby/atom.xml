@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ruby | ZoOL => Blog]]></title>
-  <link href="http://foxzool.github.com/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://foxzool.github.com/"/>
-  <updated>2012-03-14T00:12:10+08:00</updated>
-  <id>http://foxzool.github.com/</id>
+  <link href="http://zool.me/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://zool.me/"/>
+  <updated>2012-03-14T01:22:41+08:00</updated>
+  <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
     <email><![CDATA[zhooul@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[修复安装gems时Errno::ETIMEDOUT: Operation timed out - connect(2)的错误]]></title>
-    <link href="http://foxzool.github.com/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno%3A%3A-ETIMEDOUT%3A-Operation-timed-out---connect-%282%29-of-the-error"/>
+    <link href="http://zool.me/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno%3A%3A-ETIMEDOUT%3A-Operation-timed-out---connect-%282%29-of-the-error"/>
     <updated>2011-02-28T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno::-ETIMEDOUT:-Operation-timed-out---connect-(2)-of-the-error</id>
+    <id>http://zool.me/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno::-ETIMEDOUT:-Operation-timed-out---connect-(2)-of-the-error</id>
     <content type="html"><![CDATA[<p>这两天更新gems出现下面的错误
 ``` ruby
 ➜  ~  gem install rails    <br/>
@@ -56,9 +56,9 @@ gem source -r http://production.s3.rubygems.org/</p>
   
   <entry>
     <title type="html"><![CDATA[建立sproutcore应用]]></title>
-    <link href="http://foxzool.github.com/ruby/2011/02/22/Application-to-establish-sproutcore"/>
+    <link href="http://zool.me/ruby/2011/02/22/Application-to-establish-sproutcore"/>
     <updated>2011-02-22T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2011/02/22/Application-to-establish-sproutcore</id>
+    <id>http://zool.me/ruby/2011/02/22/Application-to-establish-sproutcore</id>
     <content type="html"><![CDATA[<p>sproutcore是通过rubygems来安装的
 <code>bash
 gem install sproutcore
@@ -81,9 +81,9 @@ sc-server
   
   <entry>
     <title type="html"><![CDATA[ruby中去除字符串空格的方法]]></title>
-    <link href="http://foxzool.github.com/ruby/2011/01/25/ruby-string-remove-space-methods"/>
+    <link href="http://zool.me/ruby/2011/01/25/ruby-string-remove-space-methods"/>
     <updated>2011-01-25T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2011/01/25/ruby-string-remove-space-methods</id>
+    <id>http://zool.me/ruby/2011/01/25/ruby-string-remove-space-methods</id>
     <content type="html"><![CDATA[<p>使用 String#strip方法,去除所有空格
 <code>ruby
 "    hello    ".strip   #=&gt; "hello"
@@ -107,9 +107,9 @@ sc-server
   
   <entry>
     <title type="html"><![CDATA[ruby-新年快乐]]></title>
-    <link href="http://foxzool.github.com/ruby/2010/12/29/ruby-Happy-New-Year"/>
+    <link href="http://zool.me/ruby/2010/12/29/ruby-Happy-New-Year"/>
     <updated>2010-12-29T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2010/12/29/ruby-Happy-New-Year</id>
+    <id>http://zool.me/ruby/2010/12/29/ruby-Happy-New-Year</id>
     <content type="html"><![CDATA[<p>根据网上的源码改编</p>
 
 <p><code>bash
@@ -126,9 +126,9 @@ sc-server
   
   <entry>
     <title type="html"><![CDATA[使用to_lang翻译ruby字符串]]></title>
-    <link href="http://foxzool.github.com/ruby/2010/12/29/Ruby-string-translation-using-to_lang"/>
+    <link href="http://zool.me/ruby/2010/12/29/Ruby-string-translation-using-to_lang"/>
     <updated>2010-12-29T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2010/12/29/Ruby-string-translation-using-to_lang</id>
+    <id>http://zool.me/ruby/2010/12/29/Ruby-string-translation-using-to_lang</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/jimmycuadra/to_lang">github地址</a></p>
 
 <p>我的博客就是用这个gem来翻译文章标题的</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: misc | ZoOL => Blog]]></title>
-  <link href="http://foxzool.github.com/categories/misc/atom.xml" rel="self"/>
-  <link href="http://foxzool.github.com/"/>
-  <updated>2012-03-14T00:12:10+08:00</updated>
-  <id>http://foxzool.github.com/</id>
+  <link href="http://zool.me/categories/misc/atom.xml" rel="self"/>
+  <link href="http://zool.me/"/>
+  <updated>2012-03-14T01:22:41+08:00</updated>
+  <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
     <email><![CDATA[zhooul@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[设置link标签使浏览器自动发现rss标签]]></title>
-    <link href="http://foxzool.github.com/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss"/>
+    <link href="http://zool.me/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss"/>
     <updated>2011-05-20T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss</id>
+    <id>http://zool.me/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss</id>
     <content type="html"><![CDATA[<p><code>bash
 &lt;link rel="alternate" type="application/atom" title="ZoOL =&amp;gt; Blog" href="http://zool.me/atom.xml" /&gt;
 </code></p>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[在vim中使用rvm]]></title>
-    <link href="http://foxzool.github.com/misc/2010/12/28/In-vim-using-rvm"/>
+    <link href="http://zool.me/misc/2010/12/28/In-vim-using-rvm"/>
     <updated>2010-12-28T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/misc/2010/12/28/In-vim-using-rvm</id>
+    <id>http://zool.me/misc/2010/12/28/In-vim-using-rvm</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/csexton/rvm.vim">github地址</a></p>
 
 <p>将plugin下载到你的vim plugin里</p>
@@ -54,9 +54,9 @@ set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
   
   <entry>
     <title type="html"><![CDATA[使用disqus作为本站的留言系统]]></title>
-    <link href="http://foxzool.github.com/misc/2010/12/18/Message-using-the-disqus-system-as-a-site"/>
+    <link href="http://zool.me/misc/2010/12/18/Message-using-the-disqus-system-as-a-site"/>
     <updated>2010-12-18T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/misc/2010/12/18/Message-using-the-disqus-system-as-a-site</id>
+    <id>http://zool.me/misc/2010/12/18/Message-using-the-disqus-system-as-a-site</id>
     <content type="html"><![CDATA[<p>disqus是国外的一个强大的留言系统，不仅可以单对单进行留言，还可以使用facebook,twitter等帐号进行评论互动。</p>
 
 <p>首先去他们官网进行注册  <a href="http://disqus.com">disqus网址</a>

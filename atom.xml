@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[ZoOL => Blog]]></title>
-  <link href="http://foxzool.github.com/atom.xml" rel="self"/>
-  <link href="http://foxzool.github.com/"/>
-  <updated>2012-03-14T00:12:10+08:00</updated>
-  <id>http://foxzool.github.com/</id>
+  <link href="http://zool.me/atom.xml" rel="self"/>
+  <link href="http://zool.me/"/>
+  <updated>2012-03-14T01:22:41+08:00</updated>
+  <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
     <email><![CDATA[zhooul@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[设置rails中generator使用的orm类型]]></title>
-    <link href="http://foxzool.github.com/rails/2011/06/27/setup-rails-generator-orm"/>
+    <link href="http://zool.me/rails/2011/06/27/setup-rails-generator-orm"/>
     <updated>2011-06-27T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/06/27/setup-rails-generator-orm</id>
+    <id>http://zool.me/rails/2011/06/27/setup-rails-generator-orm</id>
     <content type="html"><![CDATA[<p>在最近的一个项目里, 同时使用了postgresql和mongoid,</p>
 
 <p>结果在rails g model xxxx时, 默认调用的是mongoid,</p>
@@ -41,9 +41,9 @@
   
   <entry>
     <title type="html"><![CDATA[增加carrierwave对rails_admin的支持]]></title>
-    <link href="http://foxzool.github.com/rails/2011/06/23/carriewave-support-for-rails-admin"/>
+    <link href="http://zool.me/rails/2011/06/23/carriewave-support-for-rails-admin"/>
     <updated>2011-06-23T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/06/23/carriewave-support-for-rails-admin</id>
+    <id>http://zool.me/rails/2011/06/23/carriewave-support-for-rails-admin</id>
     <content type="html"><![CDATA[<p>由于rails_admin默认只是支持paperclip, 所以使用carrierwave的话, 需要手动做些修改.</p>
 
 <p>一共3个文件</p>
@@ -189,9 +189,9 @@
   
   <entry>
     <title type="html"><![CDATA[rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法]]></title>
-    <link href="http://foxzool.github.com/rails/2011/05/26/rails31rc1-execjs-error"/>
+    <link href="http://zool.me/rails/2011/05/26/rails31rc1-execjs-error"/>
     <updated>2011-05-26T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/05/26/rails31rc1-execjs-error</id>
+    <id>http://zool.me/rails/2011/05/26/rails31rc1-execjs-error</id>
     <content type="html"><![CDATA[<p>rail3.1rc1在服务器上运行时报以下的错误信息：</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -210,16 +210,12 @@
   
   <entry>
     <title type="html"><![CDATA[rails调试插件rails-footnotes使用说明]]></title>
-    <link href="http://foxzool.github.com/rails/2011/05/26/rails-footnotes"/>
+    <link href="http://zool.me/rails/2011/05/26/rails-footnotes"/>
     <updated>2011-05-26T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/05/26/rails-footnotes</id>
+    <id>http://zool.me/rails/2011/05/26/rails-footnotes</id>
     <content type="html"><![CDATA[<h1>说明</h1>
 
 <p>rails-footnotes 是一个在development环境下调试rails用的插件， 可以在当前页面的页脚处显示当前的调试信息，如session、实例变量、数据库查询时间等等</p>
-
-<h1>截图</h1>
-
-<p><img src="http://foxzool.github.com/assets/attachments/rails-footnotes.png" alt="rails-footnotes" /></p>
 
 <h1>安装方式</h1>
 
@@ -256,9 +252,9 @@
   
   <entry>
     <title type="html"><![CDATA[rails3rc1在安装rspec-rails时碰到报错]]></title>
-    <link href="http://foxzool.github.com/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec"/>
+    <link href="http://zool.me/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec"/>
     <updated>2011-05-23T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec</id>
+    <id>http://zool.me/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec</id>
     <content type="html"><![CDATA[<h1>今天在rails3rc1下安装rspec-rails, 提示了以下错误</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -293,9 +289,9 @@
   
   <entry>
     <title type="html"><![CDATA[设置link标签使浏览器自动发现rss标签]]></title>
-    <link href="http://foxzool.github.com/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss"/>
+    <link href="http://zool.me/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss"/>
     <updated>2011-05-20T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss</id>
+    <id>http://zool.me/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss</id>
     <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;link <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;alternate&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;application/atom&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;ZoOL =&amp;gt; Blog&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://zool.me/atom.xml&quot;</span> /&gt;
 </span></code></pre></td></tr></table></div></figure>
@@ -314,9 +310,9 @@
   
   <entry>
     <title type="html"><![CDATA[修复安装gems时Errno::ETIMEDOUT: Operation timed out - connect(2)的错误]]></title>
-    <link href="http://foxzool.github.com/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno%3A%3A-ETIMEDOUT%3A-Operation-timed-out---connect-%282%29-of-the-error"/>
+    <link href="http://zool.me/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno%3A%3A-ETIMEDOUT%3A-Operation-timed-out---connect-%282%29-of-the-error"/>
     <updated>2011-02-28T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno::-ETIMEDOUT:-Operation-timed-out&#8212;connect-(2)-of-the-error</id>
+    <id>http://zool.me/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno::-ETIMEDOUT:-Operation-timed-out&#8212;connect-(2)-of-the-error</id>
     <content type="html"><![CDATA[<p>这两天更新gems出现下面的错误</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -363,9 +359,9 @@
   
   <entry>
     <title type="html"><![CDATA[rails路由设置网站首页]]></title>
-    <link href="http://foxzool.github.com/rails/2011/02/22/Home-rails-routing-settings"/>
+    <link href="http://zool.me/rails/2011/02/22/Home-rails-routing-settings"/>
     <updated>2011-02-22T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/02/22/Home-rails-routing-settings</id>
+    <id>http://zool.me/rails/2011/02/22/Home-rails-routing-settings</id>
     <content type="html"><![CDATA[<p>做一个应用必做的一步</p>
 
 <p>首先删除 /public/index.html 这个文件</p>
@@ -385,9 +381,9 @@
   
   <entry>
     <title type="html"><![CDATA[建立sproutcore应用]]></title>
-    <link href="http://foxzool.github.com/ruby/2011/02/22/Application-to-establish-sproutcore"/>
+    <link href="http://zool.me/ruby/2011/02/22/Application-to-establish-sproutcore"/>
     <updated>2011-02-22T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2011/02/22/Application-to-establish-sproutcore</id>
+    <id>http://zool.me/ruby/2011/02/22/Application-to-establish-sproutcore</id>
     <content type="html"><![CDATA[<p>sproutcore是通过rubygems来安装的</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -417,9 +413,9 @@
   
   <entry>
     <title type="html"><![CDATA[ubutnu配置rvm,nginx和passenger的生产环境]]></title>
-    <link href="http://foxzool.github.com/rails/2011/02/15/ubutnu-configuration-rvm%2C-nginx-and-passenger-of-the-production-environment"/>
+    <link href="http://zool.me/rails/2011/02/15/ubutnu-configuration-rvm%2C-nginx-and-passenger-of-the-production-environment"/>
     <updated>2011-02-15T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/02/15/ubutnu-configuration-rvm,-nginx-and-passenger-of-the-production-environment</id>
+    <id>http://zool.me/rails/2011/02/15/ubutnu-configuration-rvm,-nginx-and-passenger-of-the-production-environment</id>
     <content type="html"><![CDATA[<p>下述内容参考了<a href="http://blog.ninjahideout.com/posts/a-guide-to-a-nginx-passenger-and-rvm-server">A Guide to a Nginx, Passenger and RVM Server</a></p>
 
 <p>首先， 使用 root 帐号登录，</p>
@@ -552,9 +548,9 @@
   
   <entry>
     <title type="html"><![CDATA[rails3新建项目模板]]></title>
-    <link href="http://foxzool.github.com/rails/2011/02/09/rails3-new-project-template"/>
+    <link href="http://zool.me/rails/2011/02/09/rails3-new-project-template"/>
     <updated>2011-02-09T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/02/09/rails3-new-project-template</id>
+    <id>http://zool.me/rails/2011/02/09/rails3-new-project-template</id>
     <content type="html"><![CDATA[<p>rails 新建项目时可以使用-m 参数来使用模板生成新项目</p>
 
 <h1>安装需求</h1>
@@ -588,9 +584,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[rails中处理大批量数据的方法]]></title>
-    <link href="http://foxzool.github.com/rails/2011/02/02/rails-in-the-method-of-handling-large-quantities-of-data"/>
+    <link href="http://zool.me/rails/2011/02/02/rails-in-the-method-of-handling-large-quantities-of-data"/>
     <updated>2011-02-02T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/02/02/rails-in-the-method-of-handling-large-quantities-of-data</id>
+    <id>http://zool.me/rails/2011/02/02/rails-in-the-method-of-handling-large-quantities-of-data</id>
     <content type="html"><![CDATA[<p>在实际运用中，我们要对每个用户发一封信的话。 一般的写法是</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -665,9 +661,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[rails中设置p3p头]]></title>
-    <link href="http://foxzool.github.com/rails/2011/02/02/Set-p3p-header-rails"/>
+    <link href="http://zool.me/rails/2011/02/02/Set-p3p-header-rails"/>
     <updated>2011-02-02T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/02/02/Set-p3p-header-rails</id>
+    <id>http://zool.me/rails/2011/02/02/Set-p3p-header-rails</id>
     <content type="html"><![CDATA[<p>由于ie6,7的bug，无法跨iframe保存cookies，所以需要设置p3p头</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -693,9 +689,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[rails的定时任务插件whenever]]></title>
-    <link href="http://foxzool.github.com/rails/2011/01/30/Tasks-plug-in-whenever-the-timing-rails"/>
+    <link href="http://zool.me/rails/2011/01/30/Tasks-plug-in-whenever-the-timing-rails"/>
     <updated>2011-01-30T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/01/30/Tasks-plug-in-whenever-the-timing-rails</id>
+    <id>http://zool.me/rails/2011/01/30/Tasks-plug-in-whenever-the-timing-rails</id>
     <content type="html"><![CDATA[<p>在做web应用时，有时会需要定时做一些操作，如发邮件，统计信息等。
 这些都是需要放在后台来执行, whenever就是这样的一个插件，使用ruby强大的DSL， 高效的配置生成定时任务。
 注意，whenever使用的是crontab定时器，所以这个gem在windows上无效。</p>
@@ -808,9 +804,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[rails中对时间的操作方法]]></title>
-    <link href="http://foxzool.github.com/rails/2011/01/29/rails-in-the-method-of-operation-of-time"/>
+    <link href="http://zool.me/rails/2011/01/29/rails-in-the-method-of-operation-of-time"/>
     <updated>2011-01-29T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/01/29/rails-in-the-method-of-operation-of-time</id>
+    <id>http://zool.me/rails/2011/01/29/rails-in-the-method-of-operation-of-time</id>
     <content type="html"><![CDATA[<p>做web应用，和时间打交道是不可免的。rails对ruby的时间模块做了扩展。
 本文作于2011年1月29日, ruby版本为1.8.7, rails版本为3.0.3</p>
 
@@ -1112,9 +1108,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[ruby中去除字符串空格的方法]]></title>
-    <link href="http://foxzool.github.com/ruby/2011/01/25/ruby-string-remove-space-methods"/>
+    <link href="http://zool.me/ruby/2011/01/25/ruby-string-remove-space-methods"/>
     <updated>2011-01-25T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2011/01/25/ruby-string-remove-space-methods</id>
+    <id>http://zool.me/ruby/2011/01/25/ruby-string-remove-space-methods</id>
     <content type="html"><![CDATA[<p>使用 String#strip方法,去除所有空格</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1148,9 +1144,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[rails中获取url信息的一些方法]]></title>
-    <link href="http://foxzool.github.com/rails/2011/01/25/rails-in-some-of-the-ways-to-obtain-information-url"/>
+    <link href="http://zool.me/rails/2011/01/25/rails-in-some-of-the-ways-to-obtain-information-url"/>
     <updated>2011-01-25T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/01/25/rails-in-some-of-the-ways-to-obtain-information-url</id>
+    <id>http://zool.me/rails/2011/01/25/rails-in-some-of-the-ways-to-obtain-information-url</id>
     <content type="html"><![CDATA[<p>如本机我测试域名为test.blog.zool.it:3000</p>
 
 <p>打开的uri为 /post/Hello-World</p>
@@ -1310,9 +1306,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[rails3中提供软删除的插件]]></title>
-    <link href="http://foxzool.github.com/rails/2010/12/30/rails3-plug-ins-to-provide-soft-delete"/>
+    <link href="http://zool.me/rails/2010/12/30/rails3-plug-ins-to-provide-soft-delete"/>
     <updated>2010-12-30T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2010/12/30/rails3-plug-ins-to-provide-soft-delete</id>
+    <id>http://zool.me/rails/2010/12/30/rails3-plug-ins-to-provide-soft-delete</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/teambox/immortal">github地址</a></p>
 
 <p>有时候，我们希望一条记录删除后仍旧保留在数据库里，这样我们可以在日后还有反悔查询的机会。</p>
@@ -1395,9 +1391,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[rails中文配置]]></title>
-    <link href="http://foxzool.github.com/rails/2010/12/30/Chinese-rails-configuration"/>
+    <link href="http://zool.me/rails/2010/12/30/Chinese-rails-configuration"/>
     <updated>2010-12-30T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2010/12/30/Chinese-rails-configuration</id>
+    <id>http://zool.me/rails/2010/12/30/Chinese-rails-configuration</id>
     <content type="html"><![CDATA[<p>rails默认为英文，像一些model的验证提示都是英文。
 按下面方法将其汉化</p>
 
@@ -1429,9 +1425,9 @@ rspec
   
   <entry>
     <title type="html"><![CDATA[ruby-新年快乐]]></title>
-    <link href="http://foxzool.github.com/ruby/2010/12/29/ruby-Happy-New-Year"/>
+    <link href="http://zool.me/ruby/2010/12/29/ruby-Happy-New-Year"/>
     <updated>2010-12-29T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ruby/2010/12/29/ruby-Happy-New-Year</id>
+    <id>http://zool.me/ruby/2010/12/29/ruby-Happy-New-Year</id>
     <content type="html"><![CDATA[<p>根据网上的源码改编</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ubuntu | ZoOL => Blog]]></title>
-  <link href="http://foxzool.github.com/categories/ubuntu/atom.xml" rel="self"/>
-  <link href="http://foxzool.github.com/"/>
-  <updated>2012-03-14T00:12:10+08:00</updated>
-  <id>http://foxzool.github.com/</id>
+  <link href="http://zool.me/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://zool.me/"/>
+  <updated>2012-03-14T01:22:41+08:00</updated>
+  <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
     <email><![CDATA[zhooul@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ubuntu安装Postgresql]]></title>
-    <link href="http://foxzool.github.com/ubuntu/2010/12/17/ubuntu-install-Postgresql"/>
+    <link href="http://zool.me/ubuntu/2010/12/17/ubuntu-install-Postgresql"/>
     <updated>2010-12-17T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ubuntu/2010/12/17/ubuntu-install-Postgresql</id>
+    <id>http://zool.me/ubuntu/2010/12/17/ubuntu-install-Postgresql</id>
     <content type="html"><![CDATA[<h1>安装</h1>
 
 <p>``` bash</p>
@@ -159,9 +159,9 @@ host    all         all         ::1/128               md5
   
   <entry>
     <title type="html"><![CDATA[开启ssh无密码登录]]></title>
-    <link href="http://foxzool.github.com/ubuntu/2010/12/17/open-ssh-without-password"/>
+    <link href="http://zool.me/ubuntu/2010/12/17/open-ssh-without-password"/>
     <updated>2010-12-17T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ubuntu/2010/12/17/open-ssh-without-password</id>
+    <id>http://zool.me/ubuntu/2010/12/17/open-ssh-without-password</id>
     <content type="html"><![CDATA[<p>首先生成公钥
 ``` bash</p>
 
@@ -199,9 +199,9 @@ OK，完成了设置。</p>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu上用apt安装sqlite]]></title>
-    <link href="http://foxzool.github.com/ubuntu/2010/12/17/Ubuntu-use-apt-to-install-sqlite-on"/>
+    <link href="http://zool.me/ubuntu/2010/12/17/Ubuntu-use-apt-to-install-sqlite-on"/>
     <updated>2010-12-17T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/ubuntu/2010/12/17/Ubuntu-use-apt-to-install-sqlite-on</id>
+    <id>http://zool.me/ubuntu/2010/12/17/Ubuntu-use-apt-to-install-sqlite-on</id>
     <content type="html"><![CDATA[<p>很简单
 ``` bash</p>
 

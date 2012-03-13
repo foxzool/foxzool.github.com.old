@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mysql | ZoOL => Blog]]></title>
-  <link href="http://foxzool.github.com/categories/mysql/atom.xml" rel="self"/>
-  <link href="http://foxzool.github.com/"/>
-  <updated>2012-03-14T00:12:10+08:00</updated>
-  <id>http://foxzool.github.com/</id>
+  <link href="http://zool.me/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://zool.me/"/>
+  <updated>2012-03-14T01:22:41+08:00</updated>
+  <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
     <email><![CDATA[zhooul@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ubuntu下mysql字符集设置错误]]></title>
-    <link href="http://foxzool.github.com/mysql/2010/12/17/ubuntu-error-under-the-mysql-character-set"/>
+    <link href="http://zool.me/mysql/2010/12/17/ubuntu-error-under-the-mysql-character-set"/>
     <updated>2010-12-17T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/mysql/2010/12/17/ubuntu-error-under-the-mysql-character-set</id>
+    <id>http://zool.me/mysql/2010/12/17/ubuntu-error-under-the-mysql-character-set</id>
     <content type="html"><![CDATA[<p>原来在rhel下设置了
 ``` bash</p>
 

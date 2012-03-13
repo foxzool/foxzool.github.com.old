@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rails | ZoOL => Blog]]></title>
-  <link href="http://foxzool.github.com/categories/rails/atom.xml" rel="self"/>
-  <link href="http://foxzool.github.com/"/>
-  <updated>2012-03-14T00:12:10+08:00</updated>
-  <id>http://foxzool.github.com/</id>
+  <link href="http://zool.me/categories/rails/atom.xml" rel="self"/>
+  <link href="http://zool.me/"/>
+  <updated>2012-03-14T01:22:41+08:00</updated>
+  <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
     <email><![CDATA[zhooul@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[设置rails中generator使用的orm类型]]></title>
-    <link href="http://foxzool.github.com/rails/2011/06/27/setup-rails-generator-orm"/>
+    <link href="http://zool.me/rails/2011/06/27/setup-rails-generator-orm"/>
     <updated>2011-06-27T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/06/27/setup-rails-generator-orm</id>
+    <id>http://zool.me/rails/2011/06/27/setup-rails-generator-orm</id>
     <content type="html"><![CDATA[<p>在最近的一个项目里, 同时使用了postgresql和mongoid,</p>
 
 <p>结果在rails g model xxxx时, 默认调用的是mongoid,</p>
@@ -40,9 +40,9 @@ end</p>
   
   <entry>
     <title type="html"><![CDATA[增加carrierwave对rails_admin的支持]]></title>
-    <link href="http://foxzool.github.com/rails/2011/06/23/carriewave-support-for-rails-admin"/>
+    <link href="http://zool.me/rails/2011/06/23/carriewave-support-for-rails-admin"/>
     <updated>2011-06-23T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/06/23/carriewave-support-for-rails-admin</id>
+    <id>http://zool.me/rails/2011/06/23/carriewave-support-for-rails-admin</id>
     <content type="html"><![CDATA[<p>由于rails_admin默认只是支持paperclip, 所以使用carrierwave的话, 需要手动做些修改.</p>
 
 <p>一共3个文件</p>
@@ -145,9 +145,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法]]></title>
-    <link href="http://foxzool.github.com/rails/2011/05/26/rails31rc1-execjs-error"/>
+    <link href="http://zool.me/rails/2011/05/26/rails31rc1-execjs-error"/>
     <updated>2011-05-26T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/05/26/rails31rc1-execjs-error</id>
+    <id>http://zool.me/rails/2011/05/26/rails31rc1-execjs-error</id>
     <content type="html"><![CDATA[<p>rail3.1rc1在服务器上运行时报以下的错误信息：</p>
 
 <p><code>bash
@@ -163,16 +163,12 @@ end
   
   <entry>
     <title type="html"><![CDATA[rails调试插件rails-footnotes使用说明]]></title>
-    <link href="http://foxzool.github.com/rails/2011/05/26/rails-footnotes"/>
+    <link href="http://zool.me/rails/2011/05/26/rails-footnotes"/>
     <updated>2011-05-26T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/05/26/rails-footnotes</id>
+    <id>http://zool.me/rails/2011/05/26/rails-footnotes</id>
     <content type="html"><![CDATA[<h1>说明</h1>
 
 <p>rails-footnotes 是一个在development环境下调试rails用的插件， 可以在当前页面的页脚处显示当前的调试信息，如session、实例变量、数据库查询时间等等</p>
-
-<h1>截图</h1>
-
-<p><img src="/assets/attachments/rails-footnotes.png" alt="rails-footnotes" /></p>
 
 <h1>安装方式</h1>
 
@@ -201,9 +197,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[rails3rc1在安装rspec-rails时碰到报错]]></title>
-    <link href="http://foxzool.github.com/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec"/>
+    <link href="http://zool.me/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec"/>
     <updated>2011-05-23T00:00:00+08:00</updated>
-    <id>http://foxzool.github.com/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec</id>
+    <id>http://zool.me/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec</id>
     <content type="html"><![CDATA[<h1>今天在rails3rc1下安装rspec-rails, 提示了以下错误</h1>
 
 <p><code>bash
