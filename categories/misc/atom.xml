@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: misc | ZoOL => Blog]]></title>
+  <link href="http://foxzool.github.com/categories/misc/atom.xml" rel="self"/>
+  <link href="http://foxzool.github.com/"/>
+  <updated>2012-03-14T00:12:10+08:00</updated>
+  <id>http://foxzool.github.com/</id>
+  <author>
+    <name><![CDATA[ZoOL]]></name>
+    <email><![CDATA[zhooul@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[设置link标签使浏览器自动发现rss标签]]></title>
+    <link href="http://foxzool.github.com/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss"/>
+    <updated>2011-05-20T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss</id>
+    <content type="html"><![CDATA[<p><code>bash
+&lt;link rel="alternate" type="application/atom" title="ZoOL =&amp;gt; Blog" href="http://zool.me/atom.xml" /&gt;
+</code></p>
+
+<p>上述语句使得浏览器在打开我的博客时，会自动获取blog的rss地址。</p>
+
+<p>另一个rss＋xml格式
+<code>bash
+&lt;link rel="alternate" type="application/rss+xml" title="ZoOL =&amp;gt; Blog" href="http://blog.zool.it/feed.rss" /
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在vim中使用rvm]]></title>
+    <link href="http://foxzool.github.com/misc/2010/12/28/In-vim-using-rvm"/>
+    <updated>2010-12-28T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/misc/2010/12/28/In-vim-using-rvm</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/csexton/rvm.vim">github地址</a></p>
+
+<p>将plugin下载到你的vim plugin里</p>
+
+<p><code>bash
+curl http://github.com/csexton/rvm.vim/raw/master/plugin/rvm.vim &gt; ~/.vim/plugin/rvm.vim
+</code></p>
+
+<p>编辑vimrc，加入下面的代码</p>
+
+<p><code>bash
+set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用disqus作为本站的留言系统]]></title>
+    <link href="http://foxzool.github.com/misc/2010/12/18/Message-using-the-disqus-system-as-a-site"/>
+    <updated>2010-12-18T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/misc/2010/12/18/Message-using-the-disqus-system-as-a-site</id>
+    <content type="html"><![CDATA[<p>disqus是国外的一个强大的留言系统，不仅可以单对单进行留言，还可以使用facebook,twitter等帐号进行评论互动。</p>
+
+<p>首先去他们官网进行注册  <a href="http://disqus.com">disqus网址</a>
+在注册后，你会得到你的网站的一个shortname，本站是zoolblog</p>
+
+<p>然后在需要加入留言的地方加入下面的代码</p>
+
+<p>``` ruby
+  <div id="disqus_thread"></div>
+  <script type="text/javascript"></p>
+
+<pre><code>  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'example'; // required: replace example with your forum shortname
+
+  // The following are highly recommended additional parameters. Remove the slashes in front to use.
+  // var disqus_identifier = 'unique_dynamic_id_1234';
+  // var disqus_url = 'http://example.com/permalink-to-page.html';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</code></pre>
+
+<p>  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+```</p>
+
+<p>这里有三个值要注意
+``` bash
+disqus_shortname #为你在网站上获得shortname,本站为zoolblog</p>
+
+<p>disqus_identifier #为当前页面的唯一值，默认为当前网页url</p>
+
+<p>disqus_url #为页面的显示url，默认为当前网页url
+```</p>
+
+<p>这里说明一下disqus_identifier和disqus_url的区别
+disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的话，是post/creat-my-rails-app这样的格式，由于slug有时会变化，所以需要disqus_identifier来帮忙，这个是一个网页slug不管怎么变化都一致的值。</p>
+]]></content>
+  </entry>
+  
+</feed>

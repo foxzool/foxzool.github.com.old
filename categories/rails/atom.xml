@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rails | ZoOL => Blog]]></title>
+  <link href="http://foxzool.github.com/categories/rails/atom.xml" rel="self"/>
+  <link href="http://foxzool.github.com/"/>
+  <updated>2012-03-14T00:12:10+08:00</updated>
+  <id>http://foxzool.github.com/</id>
+  <author>
+    <name><![CDATA[ZoOL]]></name>
+    <email><![CDATA[zhooul@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[设置rails中generator使用的orm类型]]></title>
+    <link href="http://foxzool.github.com/rails/2011/06/27/setup-rails-generator-orm"/>
+    <updated>2011-06-27T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/rails/2011/06/27/setup-rails-generator-orm</id>
+    <content type="html"><![CDATA[<p>在最近的一个项目里, 同时使用了postgresql和mongoid,</p>
+
+<p>结果在rails g model xxxx时, 默认调用的是mongoid,</p>
+
+<p>虽然能通过--orm=actvie_record参数指定orm, 但还是很麻烦.</p>
+
+<p>通过查询手册, 可以用下面的设置方式解决.</p>
+
+<p>``` ruby</p>
+
+<h1>config/application.rb</h1>
+
+<p>config.generators do |g|<br/>
+   g.orm             :active_record<br/>
+end</p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[增加carrierwave对rails_admin的支持]]></title>
+    <link href="http://foxzool.github.com/rails/2011/06/23/carriewave-support-for-rails-admin"/>
+    <updated>2011-06-23T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/rails/2011/06/23/carriewave-support-for-rails-admin</id>
+    <content type="html"><![CDATA[<p>由于rails_admin默认只是支持paperclip, 所以使用carrierwave的话, 需要手动做些修改.</p>
+
+<p>一共3个文件</p>
+
+<p>``` ruby</p>
+
+<h1>app/views/rails_admin/main/_form_carrier_wave_file.html.haml</h1>
+
+<p>= label_tag "#{field.abstract_model.to_param}<em>#{field.name}", field.label
+.input
+  - if field.bindings[:object].send("#{field.name}</em>url")</p>
+
+<pre><code>.row
+  = link_to field.bindings[:object].send("#{field.name}_url")
+  %br
+  = form.check_box "remove_#{field.name}"
+  = form.label "remove_#{field.name}", "Remove existing #{field.label.downcase}", :class =&gt; "inline"
+</code></pre>
+
+<p>  .row</p>
+
+<pre><code>= form.file_field field.name, :class =&gt; "fileUploadField #{field.has_errors? ? "errorField" : nil}"
+= form.hidden_field "#{field.name}_cache"
+</code></pre>
+
+<p>```</p>
+
+<p>``` ruby</p>
+
+<h1>app/views/rails_admin/main/_form_carrier_wave_image.html.haml</h1>
+
+<p>= label_tag "#{field.abstract_model.to_param}_#{field.name}", field.label
+.input
+  - image = field.bindings[:object].send(field.name)
+  - if image.path # the most direct check of an assets existence I could see</p>
+
+<pre><code>.row
+  -# load a default 'version' if it exists. should really be set through rails_admin's DSL:
+  - default_version = image.versions[:main]
+  = image_tag default_version &amp;&amp; default_version.url || image.url
+  %br
+  = form.check_box "remove_#{field.name}"
+  = form.label "remove_#{field.name}", "Remove existing #{field.label.downcase}", :class =&gt; "inline"
+</code></pre>
+
+<p>  .row</p>
+
+<pre><code>= form.file_field field.name, :class =&gt; "fileUploadField #{field.has_errors? ? "errorField" : nil}"
+= form.hidden_field "#{field.name}_cache"
+</code></pre>
+
+<p>```</p>
+
+<p>``` ruby</p>
+
+<h1>config/initializers/rails_admin.rb</h1>
+
+<h1>Register a custom field factory and field type for CarrierWave if its defined</h1>
+
+<p>if defined?(::CarrierWave)
+  module RailsAdmin::Config::Fields::Types</p>
+
+<pre><code># Field type that supports CarrierWave file uploads
+class CarrierWaveFile &lt; RailsAdmin::Config::Fields::Types::FileUpload
+  register_instance_option(:partial) do
+    :form_carrier_wave_file
+  end
+end
+
+# Field type that supports CarrierWave file uploads with image preview
+class CarrierWaveImage &lt; CarrierWaveFile
+  register_instance_option(:partial) do
+    :form_carrier_wave_image
+  end
+end
+
+# Register field type to the types registry
+register(:carrier_wave_file, CarrierWaveFile)
+register(:carrier_wave_image, CarrierWaveImage)
+</code></pre>
+
+<p>  end
+  RailsAdmin::Config::Fields.register_factory do |parent, properties, fields|</p>
+
+<pre><code>model = parent.abstract_model.model
+if model.kind_of?(CarrierWave::Mount) &amp;&amp; model.uploaders.include?(properties[:name])
+  type = properties[:name] =~ /image|picture|thumb/ ? :carrier_wave_image : :carrier_wave_file
+  fields &lt;&lt; RailsAdmin::Config::Fields::Types.load(type).new(parent, properties[:name], properties)
+  true
+else
+  false
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法]]></title>
+    <link href="http://foxzool.github.com/rails/2011/05/26/rails31rc1-execjs-error"/>
+    <updated>2011-05-26T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/rails/2011/05/26/rails31rc1-execjs-error</id>
+    <content type="html"><![CDATA[<p>rail3.1rc1在服务器上运行时报以下的错误信息：</p>
+
+<p><code>bash
+  Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes. (ExecJS::RuntimeUnavailable)
+</code></p>
+
+<p>解决方式是在gemfile中加入
+<code>ruby
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[rails调试插件rails-footnotes使用说明]]></title>
+    <link href="http://foxzool.github.com/rails/2011/05/26/rails-footnotes"/>
+    <updated>2011-05-26T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/rails/2011/05/26/rails-footnotes</id>
+    <content type="html"><![CDATA[<h1>说明</h1>
+
+<p>rails-footnotes 是一个在development环境下调试rails用的插件， 可以在当前页面的页脚处显示当前的调试信息，如session、实例变量、数据库查询时间等等</p>
+
+<h1>截图</h1>
+
+<p><img src="/assets/attachments/rails-footnotes.png" alt="rails-footnotes" /></p>
+
+<h1>安装方式</h1>
+
+<p>``` ruby</p>
+
+<pre><code>#编辑Gemfile, rails3版本必须用rails-footnotes 3.7 版以上的版本
+gem 'rails-footnotes', '&gt;= 3.7', :group =&gt; 'development' 
+
+bundle install
+
+#编辑config/initializers/footnotes.rb
+if defined?(Footnotes) &amp;&amp; Rails.env.development?
+    Footnotes.run! # first of all
+
+    # ... other init code
+end
+</code></pre>
+
+<p>```</p>
+
+<h1>注意</h1>
+
+<p>rails-footnotes默认使用textmate来编辑当前页面文件， 如果要自定义配置编辑器， 请看<a href="http://rubydoc.info/gems/rails-footnotes/3.7.4/file/README.rdoc">rails-footnotes文档</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[rails3rc1在安装rspec-rails时碰到报错]]></title>
+    <link href="http://foxzool.github.com/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec"/>
+    <updated>2011-05-23T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec</id>
+    <content type="html"><![CDATA[<h1>今天在rails3rc1下安装rspec-rails, 提示了以下错误</h1>
+
+<p><code>bash
+Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.8.7-p334/specifications/rspec-core-2.6.2.gemspec]: invalid date format in specification: "2011-05-21 00:00:00.000000000Z"
+</code></p>
+
+<h1>解决方法</h1>
+
+<p>找到specifications/rspec-core-2.6.2.gemspec， 将下面这行注释
+<code>bash
+s.date = %q{2011-05-21 00:00:00.000000000Z}
+</code></p>
+
+<h1>另外在执行rake命令时， 遇到了下面的报错信息</h1>
+
+<p><code>bash
+undefined method `prerequisites' for nil:NilClass
+</code></p>
+
+<p>google后发现是rspec-rails版本的问题， 使用2.6.1.beta1版本以上就好了， 编辑Gemfile
+<code>bash
+  gem 'rspec-rails', '~&gt; 2.6.1.beta'
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

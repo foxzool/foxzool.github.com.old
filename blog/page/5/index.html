@@ -1,0 +1,1036 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ZoOL => Blog</title>
+  <meta name="author" content="ZoOL">
+
+  
+  <meta name="description" content="首先使用apt-get安装ruby 1
+sudo apt-get install ruby 运行 ruby -v 1
+ruby 1.8.7 (2010-06-23 patchlevel 299) [i686-linux] ruby安装完毕 安装rubygems，注意,这里不要用apt-get来安装 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foxzool.github.com/blog/page/5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="ZoOL => Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20255130-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ZoOL => Blog</a></h1>
+  
+    <h2>I'm ZoOL!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:foxzool.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/17/Under-ubuntu-using-apt-get-install-rails-environment">Ubuntu下用apt-get安装rails环境</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>首先使用apt-get安装ruby</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install ruby
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>运行 ruby -v</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby 1.8.7 <span class="o">(</span>2010-06-23 patchlevel 299<span class="o">)</span> <span class="o">[</span>i686-linux<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ruby安装完毕</p>
+
+<p>安装rubygems，<em>注意,这里不要用apt-get来安装</em></p>
+
+<p>先从官网下载最新版rubygems,并解压</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> /tmp;wget http://production.cf.rubygems.org/rubygems/rubygems-1.3.7.tgz
+</span><span class='line'>
+</span><span class='line'>tar zxf rubygems-1.3.7.tgz
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>运行安装程序</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo ruby setup.rb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>会看到输出很多文字，最后一行是</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>RubyGems installed the following executables:
+</span><span class='line'>
+</span><span class='line'>/usr/bin/gem1.8
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后做一个ln连接</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输入gem -v 显示 1.3.7 说明 rubygems安装完毕,开始安装rails</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo gem install rails
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>经过一段时间的等待和文字输出之后，运行 rails -v， 显示  Rails 3.0.3 说明安装正确</p>
+
+<p>rails new newapp  开始享受rails的快乐吧！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ubuntu/2010/12/17/Ubuntu-use-apt-to-install-sqlite-on">Ubuntu上用apt安装sqlite</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>很简单</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install sqlite3 libsqlite3-dev
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>检查版本</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~ &gt; sqlite3 -version
+</span><span class='line'>3.7.2
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>通过命令行进入数据库</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sqlite3 development_newsite.sqlite3
+</span><span class='line'>
+</span><span class='line'>SQLite version 3.7.2
+</span><span class='line'>Enter <span class="s2">&quot;.help&quot;</span> <span class="k">for </span>instructions
+</span><span class='line'>Enter SQL statements terminated with a <span class="s2">&quot;;&quot;</span>
+</span><span class='line'>sqlite&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输入.help查看帮助， .quit退出页面</p>
+
+<p>如果需要图形界面可以安装sqlitebrowser</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install sqlitebrowser
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/17/Ubuntu-Based-rvm-ruby-version-management">Ubuntu下基于rvm管理ruby版本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>不同的项目需要的ruby版本不同，需要的gems也不同，这时可以使用rvm来帮你。</p>
+
+<p>首先先确保你安装了一些必须组件</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install curl bison build-essential git-core zlib1g-dev libssl-dev libreadline5-dev libxml2-dev
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后使用脚本安装</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> <span class="nv">$ </span>bash &lt; &lt;<span class="o">(</span> curl http://rvm.beginrescueend.com/releases/rvm-install-head <span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面的bash基本上等同于下面的脚本,两选一即可</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir -p ~/.rvm/src/ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/.rvm/src <span class="o">&amp;&amp;</span> rm -rf ./rvm/ <span class="o">&amp;&amp;</span> <span class="se">\</span>
+</span><span class='line'>git clone --depth 1 git://github.com/wayneeseguin/rvm.git <span class="o">&amp;&amp;</span> <span class="nb">cd </span>rvm <span class="o">&amp;&amp;</span> ./install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设置.bashrc, 找到下面的一段代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span> -z <span class="s2">&quot;$PS1&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>
+</span><span class='line'><span class="c"># Some code here... e.g.</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">HISTCONTROL</span><span class="o">=</span>ignoreboth
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改为</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">if</span> <span class="o">[[</span> -n <span class="s2">&quot;$PS1&quot;</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span class='line'><span class="c"># Some code here... e.g.</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">HISTCONTROL</span><span class="o">=</span>ignoreboth
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'><span class="o">[[</span> -s <span class="s2">&quot;$HOME/.rvm/scripts/rvm&quot;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> <span class="s2">&quot;$HOME/.rvm/scripts/rvm&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>退出终端，重新进入,测试是否安装成功</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> <span class="nb">type </span>rvm | head -n1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>看到下面输出说明安装成功</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> rvm is a <span class="k">function</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>开始安装ree，<em>注意这里不需要suso</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> rvm install ree
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装完毕之后，让rvm默认使用ree</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> rvm use ree --default
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果你想使用系统自带的ruby，可以这样切换</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> rvm use system
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果你安装了多个版本的ruby，可以用rvm list 来查看</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/17/To-create-an-enhanced-version-of-your-console-irb">打造你的加强版irb控制台</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/logankoester/irbrc">github地址</a></p>
+
+<h3>安装步骤</h3>
+
+<p>下载</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">git</span> <span class="nb">clone</span> <span class="n">git</span><span class="ss">:/</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">logankoester</span><span class="o">/</span><span class="n">irbrc</span><span class="o">.</span><span class="n">git</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装相关gems</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="n">cd</span> <span class="n">irbrc</span><span class="p">;</span> <span class="n">rvm</span> <span class="n">gemset</span> <span class="n">import</span> <span class="n">irbrc</span><span class="o">.</span><span class="n">gems</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果没有装rvm，直接运行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">awesome_print</span> <span class="n">bond</span> <span class="n">hirb</span> <span class="n">looksee</span> <span class="n">map_by_method</span> <span class="n">net</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">spy</span> <span class="n">sketches</span> <span class="n">what_methods</span> <span class="n">wirble</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>做文件连接</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~</span><span class="sr">/irbrc/i</span><span class="n">rbrc</span> <span class="o">~</span><span class="sr">/.irbrc</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>运行irb</p>
+
+<h3>功能介绍</h3>
+
+<ol>
+<li><p>输出代码高亮</p></li>
+<li><p>irb运行历史记录，下次打开仍保留</p></li>
+<li><p>将irb命令行提示缩短为 &#8216;>>&#8217;</p></li>
+<li><p>输入&#8217;c&#8217;或&#8217;clear&#8217;清屏</p></li>
+<li><p>可以通过tab实现代码补全</p></li>
+<li><p>使用 <em>fl(file_name)</em> 命令来快速打开文件， <em>rl</em> 命令来重新打开最近文件， <em>rt</em>命令来打开最近文件并重新执行上一条语句</p></li>
+<li><p>pm方法，可以很漂亮的列出Object的所有methods</p></li>
+<li><p>自动加载rubygems, 并加载下面几个gems</p></li>
+<li><p>map_by_method</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;</span><span class="n">a</span><span class="o">.</span><span class="n">map_by_to_i</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="err">实际上相当于</span> <span class="n">a</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:to_i</span><span class="p">,</span> <span class="err">但更</span><span class="n">dsl</span><span class="err">点不是更好</span><span class="p">?</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>what_methods</p>
+
+<p>猜方法名专用</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">what?</span> <span class="mi">3</span>  <span class="c1">#什么方法返回3？                                             </span>
+</span><span class='line'><span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">to_int</span> <span class="o">==</span> <span class="mi">3</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">floor</span> <span class="o">==</span> <span class="mi">3</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">round</span> <span class="o">==</span> <span class="mi">3</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">to_i</span> <span class="o">==</span> <span class="mi">3</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">prec_i</span> <span class="o">==</span> <span class="mi">3</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">truncate</span> <span class="o">==</span> <span class="mi">3</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;to_int&quot;</span><span class="p">,</span> <span class="s2">&quot;floor&quot;</span><span class="p">,</span> <span class="s2">&quot;round&quot;</span><span class="p">,</span> <span class="s2">&quot;to_i&quot;</span><span class="p">,</span> <span class="s2">&quot;prec_i&quot;</span><span class="p">,</span> <span class="s2">&quot;truncate&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>pp</li>
+</ul>
+
+
+<p>   用法 ap Object， 把一个Object格式华高亮输出</p>
+
+<ul>
+<li>Sketches</li>
+</ul>
+
+
+<p>   可以在irb中使用文字编辑器， 可以参看 <a href="http://ihower.tw/blog/archives/3633">ihower的这篇文章</a></p>
+
+<p>   经实际测试，在使用what_methods时不知什么原因会自动打开sketches，可以编辑~/.irbrc，将135-136的sketeches代码注释掉</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/17/Production-environment-rake-db%3A-migrate-error-database-is-not-configured">生产环境下rake Db:migrate报错database Is Not Configured</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我在服务器上运行了下面的命令</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">RAILS_ENV</span><span class="o">=</span>production rake db:migrate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>结果报错</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; ** Invoke db:migrate <span class="o">(</span>first_time<span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>&gt; ** Invoke environment <span class="o">(</span>first_time<span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>&gt; ** Execute environment
+</span><span class='line'>
+</span><span class='line'>&gt; rake aborted!
+</span><span class='line'>
+</span><span class='line'>&gt; proudction database is not configured
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>google后得到解决方法,将RAILS_ENV参数放到最后</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake db:migrate <span class="nv">RAILS_ENV</span><span class="o">=</span>production
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/17/Perfect-solution-to-China-time-zone-setting-rails">完美解决rails中国时区时间设置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>解释4个时区设置的不同</h2>
+
+<ul>
+<li><p>config.active_record.default_timezone</p></li>
+<li><p>config.time_zone</p></li>
+<li><p>Time.zone</p></li>
+<li><p>ENV[&#8216;TZ&#8217;]</p></li>
+</ul>
+
+
+<p>分别解释如下:</p>
+
+<ol>
+<li><p>ENV[&#8216;TZ&#8217;]</p>
+
+<p>这个变量指的是服务器系统变量，ubuntu下可以用cat /etc/timezone来查看</p>
+
+<p>当这个值为 Asia/Shanghai时， 显示就是中国时间。</p>
+
+<p>对于ruby/rails来说，这个值决定 Time.now的显示时间</p></li>
+<li><p>config.time_zone</p>
+
+<p>这个值是rails系统对显示时间的默认设置，可以通过 rake time:zones:all 列出所有可以设置的时区</p>
+
+<p>一般来说把这个设置为 &#8216;Beijing&#8217;</p></li>
+<li><p>Time.zone</p>
+
+<p>这个是设置最终处理显示的时区，可以覆盖config.time_zone,参数和config.time_zone一样</p>
+
+<p>可以参考 railscasts的这篇 <a href="http://railscasts.com/episodes/106-time-zones-in-rails-2-1">Time Zones in Rails 2.1</a></p></li>
+<li><p>config.active_record.default_timezone</p>
+
+<p><strong>这里就是全文的关键了！</strong></p>
+
+<p>这个default_timezone是决定active_record对数据库交互的时区设置，也就是影响created_at和updated_at在数据库的记录时间。</p>
+
+<p> 只有两个参数:utc和:local, rails初始化时默认是utc，所以保存到数据库的时间是utc时间。</p></li>
+</ol>
+
+
+<h2>总结</h2>
+
+<p>要在界面和数据库都很好的显示处理中国时区时间，编辑/path/to/site/config/application.rb(rails2是environment.rb), 加入</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">active_record</span><span class="o">.</span><span class="n">default_timezone</span> <span class="o">=</span> <span class="ss">:local</span>
+</span><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">time_zone</span> <span class="o">=</span> <span class="s1">&#39;Beijing&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>完美解决rails中国时区时间设置</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow">应用gitflow建立代码开发标准化流程</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/nvie/gitflow">github地址</a></p>
+
+<p>简单的来说就是几步</p>
+
+<p>1.安装</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget -q -O - http://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | sh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>我在安装的时候从github下载文件时报证书错误，加了参数忽略错误后才成功
+</code></pre>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | sudo sh
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install opt
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.初始化</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>   git flow init
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.开发流程,就像文章里说的</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;开发新特征
+</span><span class='line'>
+</span><span class='line'>&gt;git flow feature start &lt;name&gt; <span class="o">[</span>&lt;base&gt;<span class="o">]</span>
+</span><span class='line'>&gt;git flow feature finish &lt;name&gt;
+</span><span class='line'>&gt;列出新特征分支
+</span><span class='line'>&gt;git flow feature
+</span><span class='line'>&gt;准备发布版本
+</span><span class='line'>
+</span><span class='line'>&gt;git flow release start &lt;name&gt; <span class="o">[</span>&lt;base&gt;<span class="o">]</span>
+</span><span class='line'>&gt;git flow release finish &lt;name&gt;
+</span><span class='line'>&gt;列出发布分支
+</span><span class='line'>&gt;git flow release
+</span><span class='line'>&gt;&lt; base &gt;是位于develop分支的commit
+</span><span class='line'>
+</span><span class='line'>&gt;修正紧急Bug
+</span><span class='line'>
+</span><span class='line'>&gt;git flow hotfix start &lt;name&gt; <span class="o">[</span>&lt;base&gt;<span class="o">]</span>
+</span><span class='line'>&gt;git flow hotfix finish &lt;name&gt;
+</span><span class='line'>&gt;列出修正分支
+</span><span class='line'>&gt;git flow hotfix
+</span><span class='line'>&gt;支援其他成员工作
+</span><span class='line'>
+</span><span class='line'>&gt;git flow support start &lt;name&gt; &lt;base&gt;
+</span><span class='line'>&gt;没有finish?<span class="o">(</span>待实践<span class="o">)</span>
+</span><span class='line'>&gt;列出支援分支
+</span><span class='line'>&gt;git flow support
+</span><span class='line'>&gt;&lt; base &gt;是位于master分支的commit
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/16/rails-pluralize-words-in-dealing-with-complex-methods">Rails中处理复数单词的pluralize方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-16T00:00:00+08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>缘由</h1>
+
+<p>在日常开发中，有时候会碰到要将一些单词按照它的数量来按单复数显示</p>
+
+<p>所幸rails已经考虑到了这一点，在ActionView中有一个方法</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">There</span> <span class="n">are</span> <span class="o">&lt;%=</span> <span class="n">pluralize</span> <span class="vi">@user</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span> <span class="o">%&gt;.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>  例子</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>    <span class="n">pluralize</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;person&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="c1"># =&gt; 1 person</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">pluralize</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;person&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="c1"># =&gt; 2 people</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">pluralize</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="c1"># =&gt; 3 users</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">pluralize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;person&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="c1"># =&gt; 0 people</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>  深入研究pluralize方法:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">pluralize</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">singular</span><span class="p">,</span> <span class="n">plural</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+</span><span class='line'>  <span class="s2">&quot;</span><span class="si">#{</span><span class="n">count</span> <span class="o">||</span> <span class="mi">0</span><span class="si">}</span><span class="s2"> &quot;</span> <span class="o">+</span> <span class="p">((</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">count</span> <span class="o">=~</span> <span class="sr">/^1(\.0+)?$/</span><span class="p">)</span> <span class="p">?</span> <span class="n">singular</span> <span class="p">:</span> <span class="p">(</span><span class="n">plural</span> <span class="o">||</span> <span class="n">singular</span><span class="o">.</span><span class="n">pluralize</span><span class="p">))</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>  可以看到英语单词的单复数是由String#pluralize方法提供，这个是由ActiveSupport::Inflector提供的一个扩展方法</p>
+
+<p>  在rails console里运行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;post&quot;</span><span class="o">.</span><span class="n">pluralize</span>             <span class="c1"># =&gt; &quot;posts&quot;</span>
+</span><span class='line'><span class="s2">&quot;octopus&quot;</span><span class="o">.</span><span class="n">pluralize</span>          <span class="c1"># =&gt; &quot;octopi&quot;</span>
+</span><span class='line'><span class="s2">&quot;sheep&quot;</span><span class="o">.</span><span class="n">pluralize</span>            <span class="c1"># =&gt; &quot;sheep&quot;</span>
+</span><span class='line'><span class="s2">&quot;words&quot;</span><span class="o">.</span><span class="n">pluralize</span>            <span class="c1"># =&gt; &quot;words&quot;</span>
+</span><span class='line'><span class="s2">&quot;CamelOctopus&quot;</span><span class="o">.</span><span class="n">pluralize</span>     <span class="c1"># =&gt; &quot;CamelOctopi&quot;  </span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>  继续研究ActiveSupport::Inflector.pluralize</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">pluralize</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">result</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">dup</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">empty?</span> <span class="o">||</span> <span class="n">inflections</span><span class="o">.</span><span class="n">uncountables</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">downcase</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">result</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="n">inflections</span><span class="o">.</span><span class="n">plurals</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span><span class="o">|</span> <span class="k">break</span> <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">result</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以看到单词的单复数的匹配设置是在inflection.pluarls里，那要如何修改呢？
+rails已经有一个配置文件了，在/paht/to/site/config/initializers/inflections.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Inflector</span><span class="o">.</span><span class="n">inflections</span> <span class="k">do</span> <span class="o">|</span><span class="n">inflect</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">inflect</span><span class="o">.</span><span class="n">plural</span><span class="sr"> /^(ox)$/i</span><span class="p">,</span> <span class="s1">&#39;\1en&#39;</span>
+</span><span class='line'>  <span class="n">inflect</span><span class="o">.</span><span class="n">singular</span><span class="sr"> /^(ox)en/i</span><span class="p">,</span> <span class="s1">&#39;\1&#39;</span>
+</span><span class='line'>  <span class="n">inflect</span><span class="o">.</span><span class="n">irregular</span> <span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="s1">&#39;people&#39;</span>
+</span><span class='line'>  <span class="n">inflect</span><span class="o">.</span><span class="n">uncountable</span> <span class="sx">%w( fish sheep )</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>plural和singual是匹配单复数的通用匹配规则，irregular是处理那些特殊单词变化，uncountbale就是那些单复数一样的单词</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/06/23/carriewave-support-for-rails-admin">增加carrierwave对rails_admin的支持</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">rails3rc1在安装rspec-rails时碰到报错</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - ZoOL -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'foxzool';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

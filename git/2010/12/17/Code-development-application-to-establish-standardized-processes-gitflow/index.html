@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>应用gitflow建立代码开发标准化流程 - ZoOL => Blog</title>
+  <meta name="author" content="ZoOL">
+
+  
+  <meta name="description" content="github地址 简单的来说就是几步 1.安装 1
+wget -q -O - http://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | sh 我在安装的时候从github下载文件时报证书错误， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foxzool.github.com/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="ZoOL => Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20255130-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ZoOL => Blog</a></h1>
+  
+    <h2>I'm ZoOL!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:foxzool.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">应用gitflow建立代码开发标准化流程</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="https://github.com/nvie/gitflow">github地址</a></p>
+
+<p>简单的来说就是几步</p>
+
+<p>1.安装</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget -q -O - http://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | sh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>我在安装的时候从github下载文件时报证书错误，加了参数忽略错误后才成功
+</code></pre>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | sudo sh
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install opt
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.初始化</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>   git flow init
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.开发流程,就像文章里说的</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;开发新特征
+</span><span class='line'>
+</span><span class='line'>&gt;git flow feature start &lt;name&gt; <span class="o">[</span>&lt;base&gt;<span class="o">]</span>
+</span><span class='line'>&gt;git flow feature finish &lt;name&gt;
+</span><span class='line'>&gt;列出新特征分支
+</span><span class='line'>&gt;git flow feature
+</span><span class='line'>&gt;准备发布版本
+</span><span class='line'>
+</span><span class='line'>&gt;git flow release start &lt;name&gt; <span class="o">[</span>&lt;base&gt;<span class="o">]</span>
+</span><span class='line'>&gt;git flow release finish &lt;name&gt;
+</span><span class='line'>&gt;列出发布分支
+</span><span class='line'>&gt;git flow release
+</span><span class='line'>&gt;&lt; base &gt;是位于develop分支的commit
+</span><span class='line'>
+</span><span class='line'>&gt;修正紧急Bug
+</span><span class='line'>
+</span><span class='line'>&gt;git flow hotfix start &lt;name&gt; <span class="o">[</span>&lt;base&gt;<span class="o">]</span>
+</span><span class='line'>&gt;git flow hotfix finish &lt;name&gt;
+</span><span class='line'>&gt;列出修正分支
+</span><span class='line'>&gt;git flow hotfix
+</span><span class='line'>&gt;支援其他成员工作
+</span><span class='line'>
+</span><span class='line'>&gt;git flow support start &lt;name&gt; &lt;base&gt;
+</span><span class='line'>&gt;没有finish?<span class="o">(</span>待实践<span class="o">)</span>
+</span><span class='line'>&gt;列出支援分支
+</span><span class='line'>&gt;git flow support
+</span><span class='line'>&gt;&lt; base &gt;是位于master分支的commit
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">ZoOL</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://foxzool.github.com/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow" data-via="" data-counturl="http://foxzool.github.com/git/2010/12/17/Code-development-application-to-establish-standardized-processes-gitflow" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/rails/2010/12/16/rails-pluralize-words-in-dealing-with-complex-methods" title="Previous Post: rails中处理复数单词的pluralize方法">&laquo; rails中处理复数单词的pluralize方法</a>
+      
+      
+        <a class="basic-alignment right" href="/rails/2010/12/17/Perfect-solution-to-China-time-zone-setting-rails" title="Next Post: 完美解决rails中国时区时间设置">完美解决rails中国时区时间设置 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/06/23/carriewave-support-for-rails-admin">增加carrierwave对rails_admin的支持</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">rails3rc1在安装rspec-rails时碰到报错</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - ZoOL -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'foxzool';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ubuntu | ZoOL => Blog]]></title>
+  <link href="http://foxzool.github.com/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://foxzool.github.com/"/>
+  <updated>2012-03-14T00:12:10+08:00</updated>
+  <id>http://foxzool.github.com/</id>
+  <author>
+    <name><![CDATA[ZoOL]]></name>
+    <email><![CDATA[zhooul@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu安装Postgresql]]></title>
+    <link href="http://foxzool.github.com/ubuntu/2010/12/17/ubuntu-install-Postgresql"/>
+    <updated>2010-12-17T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/ubuntu/2010/12/17/ubuntu-install-Postgresql</id>
+    <content type="html"><![CDATA[<h1>安装</h1>
+
+<p>``` bash</p>
+
+<pre><code>sudo apt-get install postgresql
+</code></pre>
+
+<p>```</p>
+
+<p>输入密码，确认。下载安装完毕之后会创建一个postgres用户，默认密码为空。</p>
+
+<h1>配置</h1>
+
+<p>修改postgres用户密码</p>
+
+<p>``` bash</p>
+
+<pre><code>sudo passwd postgres
+</code></pre>
+
+<p>```</p>
+
+<p>切换到postgres用户</p>
+
+<p>``` bash</p>
+
+<pre><code>sudo su postgres
+</code></pre>
+
+<p>```</p>
+
+<p>登录到postgres数据库</p>
+
+<p>``` bash</p>
+
+<pre><code>psql postgres
+</code></pre>
+
+<p>```</p>
+
+<p>会看到一下文字</p>
+
+<p>``` bash</p>
+
+<pre><code>psql (8.4.5)
+Type "help" for help.
+
+postgres=#
+</code></pre>
+
+<p>```</p>
+
+<p>然后输入下面的命令,password为你要设置的密码</p>
+
+<p>``` bash</p>
+
+<pre><code>ALTER USER postgres with PASSWORD 'password'
+</code></pre>
+
+<p>```</p>
+
+<p>输入\q返回到终端</p>
+
+<h1>创建用户和数据库</h1>
+
+<p>输入</p>
+
+<p>``` bash</p>
+
+<pre><code>createuser -drSP blog  #创建一个blog用户，但不是超级管理员
+
+createdb -O blog blogdb  #创建一个属于blog用户的blogdb数据库
+</code></pre>
+
+<p>```</p>
+
+<h1>安装pgadmin</h1>
+
+<p>输入</p>
+
+<p>``` bash</p>
+
+<pre><code>sudo apt-get install pgadmin3
+</code></pre>
+
+<p>```</p>
+
+<p>安装完毕，运行</p>
+
+<p>``` bash</p>
+
+<pre><code>pgadmin3
+</code></pre>
+
+<p>```</p>
+
+<h1>设置其他网络连接数据库</h1>
+
+<p>修改/etc/postgresql/8.4/main/pg_hba.conf:</p>
+
+<p>``` bash</p>
+
+<pre><code># Database administrative login by UNIX sockets
+# local   all         postgres                          ident
+
+# TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
+
+# "local" is for Unix domain socket connections only
+local   all         all                               md5 #ident
+# IPv4 local connections: 
+host    all         all         127.0.0.1/32          md5
+# IPv6 local connections:
+host    all         all         ::1/128               md5  
+</code></pre>
+
+<p>```</p>
+
+<p>修改/etc/postgresql/8.4/main/postgresql.conf,</p>
+
+<p>``` bash</p>
+
+<pre><code>listen_address = '*' #允许其他机器访问
+</code></pre>
+
+<p>```</p>
+
+<p>重启数据库</p>
+
+<p>``` bash</p>
+
+<pre><code>sudo /etc/init.d/postgresql-8.4 restart
+</code></pre>
+
+<p>```</p>
+
+<p>安装完成</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[开启ssh无密码登录]]></title>
+    <link href="http://foxzool.github.com/ubuntu/2010/12/17/open-ssh-without-password"/>
+    <updated>2010-12-17T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/ubuntu/2010/12/17/open-ssh-without-password</id>
+    <content type="html"><![CDATA[<p>首先生成公钥
+``` bash</p>
+
+<pre><code>ssh-keygen -t rsa
+</code></pre>
+
+<p>```
+一路回车，会在~/.ssh目录下生成公钥和私钥.</p>
+
+<p>将公钥复制到需要登录的服务器
+``` bash</p>
+
+<pre><code>ssh-copy-id user@host
+</code></pre>
+
+<p>```
+OK，完成了设置。</p>
+
+<p>P.S. 如果服务器没有开启公钥登录，请编辑 /etc/ssh/sshd_config, 确保
+``` bash</p>
+
+<pre><code>PubkeyAuthentication yes
+</code></pre>
+
+<p><code>   
+并重启ssh服务
+</code> bash</p>
+
+<pre><code>sudo /etc/init.d/ssh restart
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu上用apt安装sqlite]]></title>
+    <link href="http://foxzool.github.com/ubuntu/2010/12/17/Ubuntu-use-apt-to-install-sqlite-on"/>
+    <updated>2010-12-17T00:00:00+08:00</updated>
+    <id>http://foxzool.github.com/ubuntu/2010/12/17/Ubuntu-use-apt-to-install-sqlite-on</id>
+    <content type="html"><![CDATA[<p>很简单
+``` bash</p>
+
+<pre><code>sudo apt-get install sqlite3 libsqlite3-dev
+</code></pre>
+
+<p><code>
+检查版本
+</code> bash</p>
+
+<pre><code>~ &gt; sqlite3 -version
+3.7.2
+</code></pre>
+
+<p><code>
+通过命令行进入数据库
+</code> bash</p>
+
+<pre><code>sqlite3 development_newsite.sqlite3
+
+SQLite version 3.7.2
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite&gt;
+</code></pre>
+
+<p>```
+输入.help查看帮助， .quit退出页面</p>
+
+<p>如果需要图形界面可以安装sqlitebrowser
+``` bash</p>
+
+<pre><code>sudo apt-get install sqlitebrowser
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

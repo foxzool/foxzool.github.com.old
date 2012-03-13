@@ -1,0 +1,1216 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ZoOL => Blog</title>
+  <meta name="author" content="ZoOL">
+
+  
+  <meta name="description" content="github地址 有时候在写代码时，想不起来当前model的字段属性了，annotate帮你忙。 annotate可以以注释的方式在你model文件的底部生成model的大纲(schema)信息 安装 1
+gem install annotate 生成 1
+2
+cd /path/to/app/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foxzool.github.com/blog/page/4">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="ZoOL => Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20255130-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ZoOL => Blog</a></h1>
+  
+    <h2>I'm ZoOL!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:foxzool.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/18/Annotate-the-rails-using-the-model-generated-the-outline-of-the-project">使用Annotate为rails项目生成model的大纲</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-18T00:00:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/ctran/annotate_models">github地址</a></p>
+
+<p>有时候在写代码时，想不起来当前model的字段属性了，annotate帮你忙。</p>
+
+<p>annotate可以以注释的方式在你model文件的底部生成model的大纲(schema)信息</p>
+
+<h1>安装</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install annotate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>生成</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> /path/to/app/
+</span><span class='line'>annotate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>便会生成下面的注释</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># == Schema Information</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># Table name: users</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c">#  id                   :integer(4)      not null, primary key</span>
+</span><span class='line'><span class="c">#  email                :string(255)     default(&quot;&quot;), not null</span>
+</span><span class='line'><span class="c">#  encrypted_password   :string(128)     default(&quot;&quot;), not null</span>
+</span><span class='line'><span class="c">#  username             :string(255)     not null</span>
+</span><span class='line'><span class="c">#  reset_password_token :string(255)</span>
+</span><span class='line'><span class="c">#  remember_created_at  :datetime</span>
+</span><span class='line'><span class="c">#  sign_in_count        :integer(4)      default(0)</span>
+</span><span class='line'><span class="c">#  current_sign_in_at   :datetime</span>
+</span><span class='line'><span class="c">#  last_sign_in_at      :datetime</span>
+</span><span class='line'><span class="c">#  current_sign_in_ip   :string(255)</span>
+</span><span class='line'><span class="c">#  last_sign_in_ip      :string(255)</span>
+</span><span class='line'><span class="c">#  password_salt        :string(255)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ubuntu/2010/12/17/ubuntu-install-Postgresql">ubuntu安装Postgresql</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>安装</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install postgresql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输入密码，确认。下载安装完毕之后会创建一个postgres用户，默认密码为空。</p>
+
+<h1>配置</h1>
+
+<p>修改postgres用户密码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo passwd postgres
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>切换到postgres用户</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo su postgres
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>登录到postgres数据库</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>psql postgres
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>会看到一下文字</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>psql <span class="o">(</span>8.4.5<span class="o">)</span>
+</span><span class='line'>Type <span class="s2">&quot;help&quot;</span> <span class="k">for </span>help.
+</span><span class='line'>
+</span><span class='line'><span class="nv">postgres</span><span class="o">=</span><span class="c">#</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后输入下面的命令,password为你要设置的密码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ALTER USER postgres with PASSWORD <span class="s1">&#39;password&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输入\q返回到终端</p>
+
+<h1>创建用户和数据库</h1>
+
+<p>输入</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>createuser -drSP blog  <span class="c">#创建一个blog用户，但不是超级管理员</span>
+</span><span class='line'>
+</span><span class='line'>createdb -O blog blogdb  <span class="c">#创建一个属于blog用户的blogdb数据库</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>安装pgadmin</h1>
+
+<p>输入</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install pgadmin3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装完毕，运行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>pgadmin3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>设置其他网络连接数据库</h1>
+
+<p>修改/etc/postgresql/8.4/main/pg_hba.conf:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Database administrative login by UNIX sockets</span>
+</span><span class='line'><span class="c"># local   all         postgres                          ident</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># &quot;local&quot; is for Unix domain socket connections only</span>
+</span><span class='line'><span class="nb">local   </span>all         all                               md5 <span class="c">#ident</span>
+</span><span class='line'><span class="c"># IPv4 local connections: </span>
+</span><span class='line'>host    all         all         127.0.0.1/32          md5
+</span><span class='line'><span class="c"># IPv6 local connections:</span>
+</span><span class='line'>host    all         all         ::1/128               md5
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改/etc/postgresql/8.4/main/postgresql.conf,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">listen_address</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span> <span class="c">#允许其他机器访问</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启数据库</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo /etc/init.d/postgresql-8.4 restart
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装完成</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/mysql/2010/12/17/ubuntu-error-under-the-mysql-character-set">Ubuntu下mysql字符集设置错误</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>原来在rhel下设置了</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>character-set-server <span class="o">=</span> utf8
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>但在ubuntu下不起作用，报错:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mysql: unknown variable <span class="s1">&#39;character-set-server=utf8&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>换为以下设置解决问题:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>default-character-set <span class="o">=</span> utf8
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/17/ruby-array-of-fill-method">Ruby数组填充方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>手册</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">array</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="err">→</span> <span class="n">array</span>
+</span><span class='line'><span class="n">array</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">start</span> <span class="o">[</span><span class="p">,</span> <span class="n">length</span><span class="o">]</span><span class="p">)</span> <span class="err">→</span> <span class="n">array</span>
+</span><span class='line'><span class="n">array</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">range</span> <span class="p">)</span> <span class="err">→</span> <span class="n">array</span>
+</span><span class='line'><span class="n">array</span><span class="o">.</span><span class="n">fill</span> <span class="p">{</span><span class="o">|</span><span class="n">index</span><span class="o">|</span> <span class="n">block</span> <span class="p">}</span> <span class="err">→</span> <span class="n">array</span>
+</span><span class='line'><span class="n">array</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">start</span> <span class="o">[</span><span class="p">,</span> <span class="n">length</span><span class="o">]</span> <span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">index</span><span class="o">|</span> <span class="n">block</span> <span class="p">}</span> <span class="err">→</span> <span class="n">array</span>
+</span><span class='line'><span class="n">array</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">range</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">index</span><span class="o">|</span> <span class="n">block</span> <span class="p">}</span> <span class="err">→</span> <span class="n">array</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>前三个方法都是将obj填充到array里， start 默认为0, length默认为self.length长度</p>
+
+<p>后三个方法是将block里的返回值填充到array里。block接收到的是array的元素index值。</p>
+
+<p>实例代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span> <span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>              <span class="c1">#=&gt; [&quot;x&quot;, &quot;x&quot;, &quot;x&quot;, &quot;x&quot;]</span>
+</span><span class='line'><span class="c1">#将数组里所有元素替换为&quot;x&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>        <span class="c1">#=&gt; [&quot;x&quot;, &quot;x&quot;, &quot;z&quot;, &quot;z&quot;]</span>
+</span><span class='line'><span class="c1">#从数组第[2]位元素开始，替换 2 次 &quot;z&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">1</span><span class="p">)</span>        <span class="c1">#=&gt; [&quot;y&quot;, &quot;y&quot;, &quot;z&quot;, &quot;z&quot;]</span>
+</span><span class='line'><span class="c1">#将数组[0]到[1]位的元素替换为&quot;y&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">fill</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">}</span>         <span class="c1">#=&gt; [0, 1, 4, 9]</span>
+</span><span class='line'><span class="c1">#提供block方法, i为数组下标</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">}</span>   <span class="c1">#=&gt; [&#39;a&#39;, &#39;b&#39;, 8, 27]</span>
+</span><span class='line'><span class="c1">#从数组第[-2]位开始运行block</span>
+</span><span class='line'><span class="c1">#注意，ruby源码里的注释是错的</span>
+</span><span class='line'><span class="c1">#a.fill(-2) {|i| i*i*i}   #=&gt; [0, 1, 8, 27]</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#实际应用， 我要生成一个数字从1到50的数组</span>
+</span><span class='line'>
+</span><span class='line'> <span class="o">&gt;&gt;</span>  <span class="nb">Array</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">+=</span><span class="mi">1</span> <span class="p">}</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">50</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/17/rails-Something-about-why-rails-have-a-forty_two-in-Array-method">rails趣谈&#8217;为什么rails在Array中有个forty_two方法&#8217;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>有次，群里有人问，为什么在rails的Array中有个forty_two方法</p>
+
+<p>先看代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="n">irb</span>
+</span><span class='line'><span class="o">&gt;&gt;</span> <span class="nb">require</span> <span class="s1">&#39;activesupport&#39;</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="kp">true</span>
+</span><span class='line'><span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">+=</span><span class="mi">1</span> <span class="p">}</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">50</span><span class="o">]</span>
+</span><span class='line'><span class="o">&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">forty_two</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="mi">42</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>经过网上一番探索，在这个网页得到了答案 <a href="http://www.kerrybuckley.org/2008/11/24/my-very-small-part-in-the-arrayforty_two-controversy/">网址</a></p>
+
+<p>在rails2.2时代， 有些人扩展了Array方法，从Array#second写到了Array#tenth。</p>
+
+<p>这太混乱了，于是DHH发话，只保留 second, third, fourth and fifth 但增加一个forty_two， 为什么呢？</p>
+
+<p>因为这是 <a href="http://zh.wikipedia.org/zh-cn/%E7%94%9F%E5%91%BD%E3%80%81%E5%AE%87%E5%AE%99%E4%BB%A5%E5%8F%8A%E4%BB%BB%E4%BD%95%E4%BA%8B%E6%83%85%E7%9A%84%E7%B5%82%E6%A5%B5%E7%AD%94%E6%A1%88">生命、宇宙以及任何事情的终极答案</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ubuntu/2010/12/17/open-ssh-without-password">开启ssh无密码登录</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>首先生成公钥</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ssh-keygen -t rsa
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>一路回车，会在~/.ssh目录下生成公钥和私钥.</p>
+
+<p>将公钥复制到需要登录的服务器</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ssh-copy-id user@host
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>OK，完成了设置。</p>
+
+<p>P.S. 如果服务器没有开启公钥登录，请编辑 /etc/ssh/sshd_config, 确保</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>PubkeyAuthentication yes
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>  <br/>
+并重启ssh服务</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo /etc/init.d/ssh restart
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/17/new-rails-project-parameters">新建rails项目的参数设置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>实例</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rails new newapp -d<span class="o">=</span>mysql -T -J
+</span><span class='line'>
+</span><span class='line'>rails new newapp -d<span class="o">=</span>postgresql -b<span class="o">=</span>https://gist.github.com/611035
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>参数</h1>
+
+<pre><code>rails new APP_PATH [options]
+</code></pre>
+
+<h2>APP_PATH</h2>
+
+<p>/path/to/appname， 不管前面是多复杂的路径，最后的appname就是新建的项目的名称</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rails new ~/Desktop/newapp  <span class="c">#在桌面目录上新建一个newapp目录，项目名叫newapp</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>options</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-m, <span class="o">[</span>--template<span class="o">=</span>TEMPLATE<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>用模板文件来创建项目,模板文件可以是本机文件，也可以是一个url地址</p>
+
+<p>在使用模板文件创建项目时，可以按照模板文件的配置要求，生成对应的文件/目录</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>--skip-gemfile<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+不创建Gemfile文件</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>--dev<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>开发调试用，将项目的rails指向本地gem里的rails路径.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-d, <span class="o">[</span>--database<span class="o">=</span>DATABASE<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>选择数据库，有mysql/oracle/postgresql/sqlite3/frontbase/ibm_db几种选择,默认是sqlite3</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-O, <span class="o">[</span>--skip-active-record<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不使用active-record</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-J, <span class="o">[</span>--skip-prototype<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不使用prototype</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-T, <span class="o">[</span>--skip-test-unit<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不使用prototype</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-G, <span class="o">[</span>--skip-git<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不创建.gitnore和.keeps</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-b, <span class="o">[</span>--builder<span class="o">=</span>BUILDER<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>用模板文件来创建项目,模板文件可以是本机文件，也可以是一个url地址</p>
+
+<p>在使用模板文件创建项目时，可以按照模板文件的配置要求，生成对应的文件/目录</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-r, <span class="o">[</span>--ruby<span class="o">=</span>PATH<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设置运行项目的ruby路径，默认是当前环境下的ruby路径</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>   <span class="o">[</span>--edge<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>从github更新最新的rails版本来运行项目</p>
+
+<h2>其他选项</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Runtime options:
+</span><span class='line'>
+</span><span class='line'>    -p, <span class="o">[</span>--pretend<span class="o">]</span>  <span class="c"># 运行脚本时不生成文件</span>
+</span><span class='line'>
+</span><span class='line'>    -q, <span class="o">[</span>--quiet<span class="o">]</span>    <span class="c"># 运行脚本时不输出信息</span>
+</span><span class='line'>    -s, <span class="o">[</span>--skip<span class="o">]</span>     <span class="c"># 跳过已经存在的文件</span>
+</span><span class='line'>    -f, <span class="o">[</span>--force<span class="o">]</span>    <span class="c"># 覆盖已经存在的文件</span>
+</span><span class='line'>
+</span><span class='line'>Rails options:
+</span><span class='line'>    -h, <span class="o">[</span>--help<span class="o">]</span>     <span class="c"># 显示帮助</span>
+</span><span class='line'>    -v, <span class="o">[</span>--version<span class="o">]</span>  <span class="c"># 显示Rails版本号</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/git/2010/12/17/gitignore-template-library">Gitignore模板库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/github/gitignore">github地址</a></p>
+
+<p>rails3项目新建时，会在项目根目录下生成.gitignore文件，这个文件是用来忽略那些不需要提交的文件。</p>
+
+<p>你可以直接将项目里的Rails.gitignore里面的内容替换原来项目里的gitignore</p>
+
+<p>这个模板库里还有其他许多模板，你可以在git global里加载，不用每个项目去修改了。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git config --global core.excludesfile ~/.global_ignore
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以通过git config看到设置起效</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git config --list
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/17/gem-install-pg-error-under-ubuntu">Ubuntu下gem安装pg出错</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在安装pg时，系统报了如下的错误</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>/home/zool/.rvm/rubies/ruby-1.8.7-p302/bin/ruby extconf.rb
+</span><span class='line'>checking <span class="k">for </span>pg_config... no
+</span><span class='line'>checking <span class="k">for </span>libpq-fe.h... no
+</span><span class='line'>Can<span class="s1">&#39;t find the &#39;</span>libpq-fe.h header
+</span><span class='line'>*** extconf.rb failed ***
+</span><span class='line'>Could not create Makefile due to some reason, probably lack of
+</span><span class='line'>necessary libraries and/or headers.  Check the mkmf.log file <span class="k">for </span>more
+</span><span class='line'>details.  You may need configuration options.
+</span><span class='line'>
+</span><span class='line'>Provided configuration options:
+</span><span class='line'>  --with-opt-dir
+</span><span class='line'>--without-opt-dir
+</span><span class='line'>--with-opt-include
+</span><span class='line'>--without-opt-include<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>--with-opt-lib
+</span><span class='line'>--without-opt-lib<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span><span class='line'>--with-make-prog
+</span><span class='line'>--without-make-prog
+</span><span class='line'>--srcdir<span class="o">=</span>.
+</span><span class='line'>--curdir
+</span><span class='line'>--ruby<span class="o">=</span>/home/zool/.rvm/rubies/ruby-1.8.7-p302/bin/ruby
+</span><span class='line'>--with-pg
+</span><span class='line'>--without-pg
+</span><span class='line'>--with-pg-config
+</span><span class='line'>--without-pg-config
+</span><span class='line'>--with-pg-dir
+</span><span class='line'>--without-pg-dir
+</span><span class='line'>--with-pg-include
+</span><span class='line'>--without-pg-include<span class="o">=</span><span class="k">${</span><span class="nv">pg</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>--with-pg-lib
+</span><span class='line'>--without-pg-lib<span class="o">=</span><span class="k">${</span><span class="nv">pg</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>请教GOOGLE大神后，找到如下解决方案</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install libpq-dev libpq5
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装更新后解决问题</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/17/gem-install-mysql2-error">Gem Install Mysql2 报错</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在服务器上安装mysql时，报错，安装失败， 内容如下</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; sudo gem install mysql
+</span><span class='line'>&gt; Building native extensions.  This could take a <span class="k">while</span>...
+</span><span class='line'>&gt; ERROR:  Error installing mysql:
+</span><span class='line'>&gt; ERROR: Failed to build gem native extension.
+</span><span class='line'>&gt; /usr/local/bin/ruby extconf.rb install mysql
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lm... yes
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lz... yes
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lsocket... no
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lnsl... yes
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; extconf.rb failed
+</span><span class='line'>&gt; Could not create Makefile due to some reason, probably lack of
+</span><span class='line'>&gt; necessary libraries and/or headers.  Check the mkmf.log file <span class="k">for </span>more
+</span><span class='line'>&gt; details.  You may need configuration options.
+</span><span class='line'>
+</span><span class='line'>&gt; Provided configuration options:
+</span><span class='line'>&gt;    --with-opt-dir
+</span><span class='line'>&gt;    --without-opt-dir
+</span><span class='line'>&gt;    --with-opt-include
+</span><span class='line'>&gt;    --without-opt-include<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>&gt;    --with-opt-lib
+</span><span class='line'>&gt;    --without-opt-lib<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span><span class='line'>&gt;    --with-make-prog
+</span><span class='line'>&gt;    --without-make-prog
+</span><span class='line'>&gt;    --srcdir<span class="o">=</span>.
+</span><span class='line'>&gt;    --curdir
+</span><span class='line'>&gt;    --ruby<span class="o">=</span>/usr/local/bin/ruby
+</span><span class='line'>&gt;    --with-mysql-config
+</span><span class='line'>&gt;    --without-mysql-config
+</span><span class='line'>&gt;    --with-mysql-dir
+</span><span class='line'>&gt;    --without-mysql-dir
+</span><span class='line'>&gt;    --with-mysql-include
+</span><span class='line'>&gt;    --without-mysql-include<span class="o">=</span><span class="k">${</span><span class="nv">mysql</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>&gt;    --with-mysql-lib
+</span><span class='line'>&gt;    --without-mysql-lib<span class="o">=</span><span class="k">${</span><span class="nv">mysql</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-mlib
+</span><span class='line'>&gt;    --without-mlib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-zlib
+</span><span class='line'>&gt;    --without-zlib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-socketlib
+</span><span class='line'>&gt;    --without-socketlib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-nsllib
+</span><span class='line'>&gt;    --without-nsllib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>经检查，是由于我将mysql调整了安装目录导致， 执行下面代码后安装成功.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo gem install mysql -- --with-mysql-config<span class="o">=</span>/usr/local/mysql/bin/mysql_config
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/5/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/06/23/carriewave-support-for-rails-admin">增加carrierwave对rails_admin的支持</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">rails3rc1在安装rspec-rails时碰到报错</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - ZoOL -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'foxzool';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

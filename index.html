@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>ZoOL => Blog</title>
+  <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="在最近的一个项目里, 同时使用了postgresql和mongoid, 结果在rails g model xxxx时, 默认调用的是mongoid, 虽然能通过&#8211;orm=actvie_record参数指定orm, 但还是很麻烦. 通过查询手册, 可以用下面的设置方式解决. 1
+2
+3 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,20 +26,32 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="ZoOL => Blog" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20255130-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">ZoOL => Blog</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>I'm ZoOL!</h2>
   
 </hgroup>
 
@@ -65,7 +79,816 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-27T00:00:00+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在最近的一个项目里, 同时使用了postgresql和mongoid,</p>
+
+<p>结果在rails g model xxxx时, 默认调用的是mongoid,</p>
+
+<p>虽然能通过&#8211;orm=actvie_record参数指定orm, 但还是很麻烦.</p>
+
+<p>通过查询手册, 可以用下面的设置方式解决.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#config/application.rb</span>
+</span><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">generators</span> <span class="k">do</span> <span class="o">|</span><span class="n">g</span><span class="o">|</span>
+</span><span class='line'>   <span class="n">g</span><span class="o">.</span><span class="n">orm</span>             <span class="ss">:active_record</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2011/06/23/carriewave-support-for-rails-admin">增加carrierwave对rails_admin的支持</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-23T00:00:00+08:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>由于rails_admin默认只是支持paperclip, 所以使用carrierwave的话, 需要手动做些修改.</p>
+
+<p>一共3个文件</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#app/views/rails_admin/main/_form_carrier_wave_file.html.haml</span>
+</span><span class='line'><span class="o">=</span> <span class="n">label_tag</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">abstract_model</span><span class="o">.</span><span class="n">to_param</span><span class="si">}</span><span class="s2">_</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">label</span>
+</span><span class='line'><span class="o">.</span><span class="n">input</span>
+</span><span class='line'>  <span class="o">-</span> <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">bindings</span><span class="o">[</span><span class="ss">:object</span><span class="o">].</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_url&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">row</span>
+</span><span class='line'>      <span class="o">=</span> <span class="n">link_to</span> <span class="n">field</span><span class="o">.</span><span class="n">bindings</span><span class="o">[</span><span class="ss">:object</span><span class="o">].</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_url&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="o">%</span><span class="n">br</span>
+</span><span class='line'>      <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">check_box</span> <span class="s2">&quot;remove_</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>      <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">label</span> <span class="s2">&quot;remove_</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Remove existing </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">downcase</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s2">&quot;inline&quot;</span>
+</span><span class='line'>  <span class="o">.</span><span class="n">row</span>
+</span><span class='line'>    <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">file_field</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s2">&quot;fileUploadField </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">has_errors?</span> <span class="p">?</span> <span class="s2">&quot;errorField&quot;</span> <span class="p">:</span> <span class="kp">nil</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>    <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">hidden_field</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_cache&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#app/views/rails_admin/main/_form_carrier_wave_image.html.haml</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">=</span> <span class="n">label_tag</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">abstract_model</span><span class="o">.</span><span class="n">to_param</span><span class="si">}</span><span class="s2">_</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">label</span>
+</span><span class='line'><span class="o">.</span><span class="n">input</span>
+</span><span class='line'>  <span class="o">-</span> <span class="n">image</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">bindings</span><span class="o">[</span><span class="ss">:object</span><span class="o">].</span><span class="n">send</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span><span class='line'>  <span class="o">-</span> <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">path</span> <span class="c1"># the most direct check of an assets existence I could see</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">row</span>
+</span><span class='line'>      <span class="o">-</span><span class="c1"># load a default &#39;version&#39; if it exists. should really be set through rails_admin&#39;s DSL:</span>
+</span><span class='line'>      <span class="o">-</span> <span class="n">default_version</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">versions</span><span class="o">[</span><span class="ss">:main</span><span class="o">]</span>
+</span><span class='line'>      <span class="o">=</span> <span class="n">image_tag</span> <span class="n">default_version</span> <span class="o">&amp;&amp;</span> <span class="n">default_version</span><span class="o">.</span><span class="n">url</span> <span class="o">||</span> <span class="n">image</span><span class="o">.</span><span class="n">url</span>
+</span><span class='line'>      <span class="o">%</span><span class="n">br</span>
+</span><span class='line'>      <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">check_box</span> <span class="s2">&quot;remove_</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>      <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">label</span> <span class="s2">&quot;remove_</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Remove existing </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">downcase</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s2">&quot;inline&quot;</span>
+</span><span class='line'>  <span class="o">.</span><span class="n">row</span>
+</span><span class='line'>    <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">file_field</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s2">&quot;fileUploadField </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">has_errors?</span> <span class="p">?</span> <span class="s2">&quot;errorField&quot;</span> <span class="p">:</span> <span class="kp">nil</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>    <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">hidden_field</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_cache&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#config/initializers/rails_admin.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Register a custom field factory and field type for CarrierWave if its defined</span>
+</span><span class='line'><span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="o">::</span><span class="no">CarrierWave</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">RailsAdmin::Config::Fields::Types</span>
+</span><span class='line'>    <span class="c1"># Field type that supports CarrierWave file uploads</span>
+</span><span class='line'>    <span class="k">class</span> <span class="nc">CarrierWaveFile</span> <span class="o">&lt;</span> <span class="no">RailsAdmin</span><span class="o">::</span><span class="no">Config</span><span class="o">::</span><span class="no">Fields</span><span class="o">::</span><span class="no">Types</span><span class="o">::</span><span class="no">FileUpload</span>
+</span><span class='line'>      <span class="n">register_instance_option</span><span class="p">(</span><span class="ss">:partial</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>        <span class="ss">:form_carrier_wave_file</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># Field type that supports CarrierWave file uploads with image preview</span>
+</span><span class='line'>    <span class="k">class</span> <span class="nc">CarrierWaveImage</span> <span class="o">&lt;</span> <span class="no">CarrierWaveFile</span>
+</span><span class='line'>      <span class="n">register_instance_option</span><span class="p">(</span><span class="ss">:partial</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>        <span class="ss">:form_carrier_wave_image</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># Register field type to the types registry</span>
+</span><span class='line'>    <span class="n">register</span><span class="p">(</span><span class="ss">:carrier_wave_file</span><span class="p">,</span> <span class="no">CarrierWaveFile</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">register</span><span class="p">(</span><span class="ss">:carrier_wave_image</span><span class="p">,</span> <span class="no">CarrierWaveImage</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="no">RailsAdmin</span><span class="o">::</span><span class="no">Config</span><span class="o">::</span><span class="no">Fields</span><span class="o">.</span><span class="n">register_factory</span> <span class="k">do</span> <span class="o">|</span><span class="n">parent</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">fields</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">model</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">abstract_model</span><span class="o">.</span><span class="n">model</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">kind_of?</span><span class="p">(</span><span class="no">CarrierWave</span><span class="o">::</span><span class="no">Mount</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">model</span><span class="o">.</span><span class="n">uploaders</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">properties</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">type</span> <span class="o">=</span> <span class="n">properties</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span> <span class="o">=~</span> <span class="sr">/image|picture|thumb/</span> <span class="p">?</span> <span class="ss">:carrier_wave_image</span> <span class="p">:</span> <span class="ss">:carrier_wave_file</span>
+</span><span class='line'>      <span class="n">fields</span> <span class="o">&lt;&lt;</span> <span class="no">RailsAdmin</span><span class="o">::</span><span class="no">Config</span><span class="o">::</span><span class="no">Fields</span><span class="o">::</span><span class="no">Types</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">properties</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+</span><span class='line'>      <span class="kp">true</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>      <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could Not Find a JavaScript Runtime错误的解决方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-26T00:00:00+08:00" pubdate data-updated="true">May 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>rail3.1rc1在服务器上运行时报以下的错误信息：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs <span class="k">for </span>a list of available runtimes. <span class="o">(</span>ExecJS::RuntimeUnavailable<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>解决方式是在gemfile中加入</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;therubyracer-heroku&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8.1.pre3&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2011/05/26/rails-footnotes">Rails调试插件rails-footnotes使用说明</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-26T00:00:00+08:00" pubdate data-updated="true">May 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>说明</h1>
+
+<p>rails-footnotes 是一个在development环境下调试rails用的插件， 可以在当前页面的页脚处显示当前的调试信息，如session、实例变量、数据库查询时间等等</p>
+
+<h1>截图</h1>
+
+<p><img src="/assets/attachments/rails-footnotes.png" alt="rails-footnotes" /></p>
+
+<h1>安装方式</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#编辑Gemfile, rails3版本必须用rails-footnotes 3.7 版以上的版本</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;rails-footnotes&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;= 3.7&#39;</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="s1">&#39;development&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">bundle</span> <span class="n">install</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#编辑config/initializers/footnotes.rb</span>
+</span><span class='line'><span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="no">Footnotes</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">Rails</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">development?</span>
+</span><span class='line'>    <span class="no">Footnotes</span><span class="o">.</span><span class="n">run!</span> <span class="c1"># first of all</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># ... other init code</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>注意</h1>
+
+<p>rails-footnotes默认使用textmate来编辑当前页面文件， 如果要自定义配置编辑器， 请看<a href="http://rubydoc.info/gems/rails-footnotes/3.7.4/file/README.rdoc">rails-footnotes文档</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">Rails3rc1在安装rspec-rails时碰到报错</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-23T00:00:00+08:00" pubdate data-updated="true">May 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>今天在rails3rc1下安装rspec-rails, 提示了以下错误</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Invalid gemspec in <span class="o">[</span>/Users/ZoOL/.rvm/gems/ruby-1.8.7-p334/specifications/rspec-core-2.6.2.gemspec<span class="o">]</span>: invalid date format in specification: <span class="s2">&quot;2011-05-21 00:00:00.000000000Z&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>解决方法</h1>
+
+<p>找到specifications/rspec-core-2.6.2.gemspec， 将下面这行注释</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>s.date <span class="o">=</span> %q<span class="o">{</span>2011-05-21 00:00:00.000000000Z<span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>另外在执行rake命令时， 遇到了下面的报错信息</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>undefined method <span class="sb">`</span>prerequisites<span class="err">&#39;</span> <span class="k">for </span>nil:NilClass
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>google后发现是rspec-rails版本的问题， 使用2.6.1.beta1版本以上就好了， 编辑Gemfile</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  gem <span class="s1">&#39;rspec-rails&#39;</span>, <span class="s1">&#39;~&gt; 2.6.1.beta&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/misc/2011/05/20/set-link-rel-alternate-to-auto-discover-rss">设置link标签使浏览器自动发现rss标签</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-20T00:00:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;link <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;alternate&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;application/atom&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;ZoOL =&amp;gt; Blog&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://zool.me/atom.xml&quot;</span> /&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上述语句使得浏览器在打开我的博客时，会自动获取blog的rss地址。</p>
+
+<p>另一个rss＋xml格式</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;link <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;alternate&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;application/rss+xml&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;ZoOL =&amp;gt; Blog&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://blog.zool.it/feed.rss&quot;</span> /
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2011/02/28/When-a-repair-installation-of-gems-Errno%3A%3A-ETIMEDOUT%3A-Operation-timed-out---connect-%282%29-of-the-error">修复安装gems时Errno::ETIMEDOUT: Operation Timed Out - Connect(2)的错误</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-28T00:00:00+08:00" pubdate data-updated="true">Feb 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这两天更新gems出现下面的错误</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">➜</span>  <span class="o">~</span>  <span class="n">gem</span> <span class="n">install</span> <span class="n">rails</span>
+</span><span class='line'><span class="no">ERROR</span><span class="p">:</span>  <span class="no">Could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">gem</span> <span class="s1">&#39;rails&#39;</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">in</span> <span class="n">any</span> <span class="n">repository</span>
+</span><span class='line'><span class="no">ERROR</span><span class="p">:</span>  <span class="no">While</span> <span class="n">executing</span> <span class="n">gem</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span> <span class="p">(</span><span class="no">Gem</span><span class="o">::</span><span class="no">RemoteFetcher</span><span class="o">::</span><span class="no">FetchError</span><span class="p">)</span>
+</span><span class='line'>    <span class="no">Errno</span><span class="o">::</span><span class="no">ETIMEDOUT</span><span class="p">:</span> <span class="no">Connection</span> <span class="n">timed</span> <span class="n">out</span> <span class="o">-</span> <span class="n">connect</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">latest_specs</span><span class="o">.</span><span class="mi">4</span><span class="o">.</span><span class="mi">8</span><span class="o">.</span><span class="n">gz</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>经检查和GFW无关，是rubygems的DNS
+调整问题</p>
+
+<h1>问题解决的最好方法方法</h1>
+
+<p>使用google的DNS
+8.8.8.8 / 8.8.4.4</p>
+
+<h1>另一种解决方式</h1>
+
+<p>修改rubygems的source源</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#删除原有gem source</span>
+</span><span class='line'><span class="n">gem</span> <span class="n">source</span> <span class="o">-</span><span class="n">r</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+</span><span class='line'><span class="n">gem</span> <span class="n">source</span> <span class="o">-</span><span class="n">r</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">production</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#增加新source源</span>
+</span><span class='line'><span class="n">gem</span> <span class="n">source</span> <span class="o">-</span><span class="n">a</span>  <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">production</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2011/02/22/Home-rails-routing-settings">Rails路由设置网站首页</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-22T00:00:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>做一个应用必做的一步</p>
+
+<p>首先删除 /public/index.html 这个文件</p>
+
+<p>然后编辑 config/route.rb ，设置路由</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">root</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s2">&quot;home#index&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其中 &#8220;home#index&#8221; 是rails路由的简写， 指的是 homescontroller的index方法</p>
+
+<p>设置首页后， 会自动生成两个helper方法 root_path和 root_url，  其中<em>path是相对路径，</em>url是绝对路径</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2011/02/22/Application-to-establish-sproutcore">建立sproutcore应用</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-22T00:00:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>sproutcore是通过rubygems来安装的</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install sproutcore
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>建立应用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sc-init HelloWorld
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>启动应用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>HelloWorld
+</span><span class='line'>sc-server
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>便会通过启动thin在locahost:4020提供应用服务</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2011/02/15/ubutnu-configuration-rvm%2C-nginx-and-passenger-of-the-production-environment">Ubutnu配置rvm,nginx和passenger的生产环境</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-15T00:00:00+08:00" pubdate data-updated="true">Feb 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>下述内容参考了<a href="http://blog.ninjahideout.com/posts/a-guide-to-a-nginx-passenger-and-rvm-server">A Guide to a Nginx, Passenger and RVM Server</a></p>
+
+<p>首先， 使用 root 帐号登录，</p>
+
+<p>安装git和curl</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install curl git-core
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用脚本安装rvm</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash &lt; &lt;<span class="o">(</span>curl -L http://bit.ly/rvm-install-system-wide<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>脚本会自动创建一个rvm组，并将root用户加入</p>
+
+<p>编辑 /root/.bashrc和/etc/skel/.bashrc
+将</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span> -z <span class="s2">&quot;$PS!&quot;</span><span class="o">]</span>  <span class="o">&amp;&amp;</span> <span class="k">return</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>替换为</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">if</span> <span class="o">[[</span> -n <span class="s2">&quot;$PS1&quot;</span> <span class="o">]]</span>; <span class="k">then</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在文件最后加入</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">fi</span>
+</span><span class='line'><span class="k">if </span>groups | grep -q rvm ; <span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nb">source</span> <span class="s2">&quot;/usr/local/lib/rvm&quot;</span>
+</span><span class='line'><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>配置用户</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#增加zool用户</span>
+</span><span class='line'>adduser zool
+</span><span class='line'><span class="c">#将zool加入rvm组</span>
+</span><span class='line'>adduser zool rvm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>登录zool用户并测试</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">type </span>rvm | head -n1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果显示 rvm is a function 则表示安装正确</p>
+
+<p>安装ree依赖组件</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>aptitude install build-essential bison openssl libreadline5 libreadline-dev <span class="se">\</span>
+</span><span class='line'>curl git-core zlib1g zlib1g-dev libssl-dev vim libsqlite3-0 libsqlite3-dev <span class="se">\</span>
+</span><span class='line'>sqlite3 libreadline-dev libxml2-dev git-core subversion autoconf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装ree</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm install ree
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设为默认环境</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm use ree --default
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装passenger和nginx</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install passenger
+</span><span class='line'>rvmsudo passenger-install-nginx-module
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>配置nginx里的ruby环境</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>passenger_root /usr/local/rvm/gems/ree-1.8.7-2010.02/gems/passenger-3.0.0;
+</span><span class='line'>passenger_ruby /usr/local/rvm/wrappers/ree-1.8.7-2010.02/ruby;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设置nginx开机脚本</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl -L http://bit.ly/nginx-ubuntu-init-file &gt; /etc/init.d/nginx
+</span><span class='line'>chmod +x /etc/init.d/nginx
+</span><span class='line'>update-rc.d nginx defaults
+</span><span class='line'>/etc/init.d/nginx start
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>原文中后面的step6,7关于Capistrano的环境配置以后再另文详述</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -76,6 +899,26 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/06/23/carriewave-support-for-rails-admin">增加carrierwave对rails_admin的支持</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">rails3rc1在安装rspec-rails时碰到报错</a>
+      </li>
     
   </ul>
 </section>
@@ -91,12 +934,25 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Your Name -
+  Copyright &copy; 2012 - ZoOL -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'foxzool';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

@@ -1,0 +1,1086 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ZoOL => Blog</title>
+  <meta name="author" content="ZoOL">
+
+  
+  <meta name="description" content="rails默认使用的是prototype这个库，如果要替换为jquery的话，按下面步骤做 首先替换public/javascript/rails.js为jquery的版本,
+从github下载 覆盖public/javascript/rails.js 然后下载jquery 放到pubic/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://foxzool.github.com/blog/page/3">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="ZoOL => Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20255130-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ZoOL => Blog</a></h1>
+  
+    <h2>I'm ZoOL!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:foxzool.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/29/Use-jquery-in-rails">在rails中使用jquery</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>rails默认使用的是prototype这个库，如果要替换为jquery的话，按下面步骤做</p>
+
+<p>首先替换public/javascript/rails.js为jquery的版本,
+<a href="https://github.com/rails/jquery-ujs/blob/master/src/rails.js">从github下载</a></p>
+
+<p>覆盖public/javascript/rails.js</p>
+
+<p>然后<a href="http://code.jquery.com/jquery-1.4.4.min.js">下载jquery</a></p>
+
+<p>放到pubic/javascript/jquery.js</p>
+
+<p>在config/application.rb里，将下面的注释取消</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>config.action_view.javascript_expansions<span class="o">[</span>:defaults<span class="o">]</span> <span class="o">=</span> %w<span class="o">(</span>jquery rails<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启服务器</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/29/Ruby-string-translation-using-to_lang">使用to_lang翻译ruby字符串</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/jimmycuadra/to_lang">github地址</a></p>
+
+<p>我的博客就是用这个gem来翻译文章标题的</p>
+
+<h1>安装</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install to_lang
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>使用</h1>
+
+<p>ToLang必须初始配置一个google api key</p>
+
+<p><a href="https://code.google.com/apis/console">api key 获取地址</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="err">‘</span><span class="n">to_lang</span><span class="err">’</span>
+</span><span class='line'><span class="no">ToLang</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="err">‘</span><span class="no">YOUR_GOOGLE_TRANSLATE_API_KEY</span><span class="err">’</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后就可以变魔术了</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="o">&gt;</span> <span class="s1">&#39;你好&#39;</span><span class="o">.</span><span class="n">to_english</span>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;Hello&quot;</span>
+</span><span class='line'> <span class="o">&gt;</span> <span class="s1">&#39;hotfix&#39;</span><span class="o">.</span><span class="n">to_simplified_chinese</span>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;修复&quot;</span>
+</span><span class='line'> <span class="o">&gt;</span> <span class="s2">&quot;Rails 有非常強大的路徑指派功能，讓我們看看有哪些設定方式吧&quot;</span><span class="o">.</span><span class="n">to_simplified_chinese_from_traditional_chinese</span>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;Rails 有非常强大的路径指派功能，让我们看看有哪些设定方式吧&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>也可以直接用String#translate方法</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">“</span><span class="n">hello</span> <span class="n">world</span><span class="err">”</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="err">‘</span><span class="n">es</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="err">“</span><span class="n">hola</span> <span class="n">mundo</span><span class="err">”</span>
+</span><span class='line'><span class="err">“</span><span class="n">a</span> <span class="n">pie</span><span class="err">”</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="err">‘</span><span class="n">es</span><span class="err">’</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="err">‘</span><span class="n">en</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="err">“</span><span class="n">un</span> <span class="n">pastel</span><span class="err">”</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>所有支持的语言</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>to_afrikaans
+</span><span class='line'>to_albanian
+</span><span class='line'>to_arabic
+</span><span class='line'>to_basque
+</span><span class='line'>to_belarusian
+</span><span class='line'>to_bulgarian
+</span><span class='line'>to_catalan
+</span><span class='line'>to_simplified_chinese
+</span><span class='line'>to_traditional_chinese
+</span><span class='line'>to_croatian
+</span><span class='line'>to_czech
+</span><span class='line'>to_danish
+</span><span class='line'>to_dutch
+</span><span class='line'>to_english
+</span><span class='line'>to_estonian
+</span><span class='line'>to_filipino
+</span><span class='line'>to_finnish
+</span><span class='line'>to_french
+</span><span class='line'>to_galician
+</span><span class='line'>to_german
+</span><span class='line'>to_greek
+</span><span class='line'>to_haitian_creole
+</span><span class='line'>to_hebrew
+</span><span class='line'>to_hindi
+</span><span class='line'>to_hungarian
+</span><span class='line'>to_icelandic
+</span><span class='line'>to_indonesian
+</span><span class='line'>to_irish
+</span><span class='line'>to_italian
+</span><span class='line'>to_japanese
+</span><span class='line'>to_latvian
+</span><span class='line'>to_lithuanian
+</span><span class='line'>to_macedonian
+</span><span class='line'>to_malay
+</span><span class='line'>to_maltese
+</span><span class='line'>to_norwegian
+</span><span class='line'>to_persian
+</span><span class='line'>to_polish
+</span><span class='line'>to_portuguese
+</span><span class='line'>to_romanian
+</span><span class='line'>to_russian
+</span><span class='line'>to_serbian
+</span><span class='line'>to_slovak
+</span><span class='line'>to_slovenian
+</span><span class='line'>to_spanish
+</span><span class='line'>to_swahili
+</span><span class='line'>to_swedish
+</span><span class='line'>to_thai
+</span><span class='line'>to_turkish
+</span><span class='line'>to_ukrainian
+</span><span class='line'>to_vietnamese
+</span><span class='line'>to_welsh
+</span><span class='line'>to_yiddish
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/29/Rails-generate-entity-relationship-diagram-projects">生成rails项目的实体关系图</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>实体关系图 == Entity-Relationship Diagrams</p>
+
+<p><a href="http://rails-erd.rubyforge.org/">插件官网</a></p>
+
+<p>首先安装Graphviz</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>% brew install cairo pango graphviz    <span class="c"># Homebrew on Mac OS X</span>
+</span><span class='line'>% sudo port install graphviz           <span class="c"># Macports on Mac OS X</span>
+</span><span class='line'>% sudo aptitude install graphviz       <span class="c"># Debian and Ubuntu</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后在开发环境中使用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>group :development <span class="k">do</span>
+</span><span class='line'><span class="k">  </span>gem <span class="s2">&quot;rails-erd&quot;</span>
+</span><span class='line'>end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>% bundle install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>生成PDF</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>% rake erd
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/misc/2010/12/28/In-vim-using-rvm">在vim中使用rvm</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-28T00:00:00+08:00" pubdate data-updated="true">Dec 28<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/csexton/rvm.vim">github地址</a></p>
+
+<p>将plugin下载到你的vim plugin里</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl http://github.com/csexton/rvm.vim/raw/master/plugin/rvm.vim &gt; ~/.vim/plugin/rvm.vim
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>编辑vimrc，加入下面的代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">set </span>statusline+<span class="o">=</span>%<span class="o">{</span>exists<span class="o">(</span><span class="s1">&#39;g:loaded_rvm&#39;</span><span class="o">)</span>?rvm#statusline<span class="o">()</span>:<span class="s1">&#39;&#39;</span><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/27/My-autotest-configuration">我的autotest配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-27T00:00:00+08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>放在 ~/.autotest里， 起到统一配置</p>
+
+<p>其中我没有用mac，所以注释掉了growl的相关配置</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#require &quot;autotest/growl&quot;</span>
+</span><span class='line'><span class="c1">#require &#39;redgreen/autotest&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s2">&quot;autotest/restart&quot;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;autotest/timestamp&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;autotest_notification&#39;</span>
+</span><span class='line'><span class="no">SPEAKING</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'><span class="no">DOOM_EDITION</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'><span class="no">BUUF</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'><span class="no">PENDING</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'><span class="no">STICKY</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'><span class="no">SUCCESS_SOUND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span><span class='line'><span class="no">FAILURE_SOUND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="no">Autotest</span><span class="o">.</span><span class="n">add_hook</span> <span class="ss">:initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">autotest</span><span class="o">|</span>
+</span><span class='line'>  <span class="sx">%w{.git .svn .hg .DS_Store ._* vendor tmp log doc}</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">exception</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">autotest</span><span class="o">.</span><span class="n">add_exception</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#module Autotest::Growl</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#  def self.growl title, msg, img, pri=0, stick=&quot;&quot; </span>
+</span><span class='line'><span class="c1">#    system &quot;growlnotify -n autotest --image #{img} -p #{pri} -m #{ msg.inspect} #{title} #{stick}&quot; </span>
+</span><span class='line'><span class="c1">#  end</span>
+</span><span class='line'><span class="c1">#  #</span>
+</span><span class='line'><span class="c1">#  Autotest.add_hook :ran_command do |autotest|</span>
+</span><span class='line'><span class="c1">#    results = [autotest.results].flatten.join(&quot;\n&quot;)</span>
+</span><span class='line'><span class="c1">#    output = results.slice(/(\d+)\s+examples?,\s*(\d+)\s+failures?(,\s*(\d+)\s+pending)?/) </span>
+</span><span class='line'><span class="c1">#    if output  =~ /[1-9]\sfailures?/</span>
+</span><span class='line'><span class="c1">#      growl &quot;FAIL:&quot;, &quot;#{output}&quot;, &quot;~/Library/autotest/fail.png&quot;, 2, &quot;-s&quot; </span>
+</span><span class='line'><span class="c1">#    elsif output  =~ /[1-9]\spending?/</span>
+</span><span class='line'><span class="c1">#      growl &quot;PENDING:&quot;, &quot;#{output}&quot;, &quot;~/Library/autotest/pending.png&quot;, 2, &quot;-s&quot; </span>
+</span><span class='line'><span class="c1">#    else</span>
+</span><span class='line'><span class="c1">#      growl &quot;PASS:&quot;, &quot;#{output}&quot;, &quot;~/Library/autotest/pass.png&quot; </span>
+</span><span class='line'><span class="c1">#    end</span>
+</span><span class='line'><span class="c1">#  end</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/27/Configuration-rails-Home">配置rails首页</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-27T00:00:00+08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>新建rails项目之后， 将public/index.html删除</p>
+
+<p>然后，生成首页的controller</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rails g controller home index
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>编辑config/routes.rb,配置root</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>root :to <span class="o">=</span>&gt; <span class="s1">&#39;home#index&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>配置完毕， 所有到/ 的访问都转向了home控制器的index方法</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/20/In-the-realization-of-the-counting-has-many-through">在has Many Through里实现计数</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-20T00:00:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>由于has many  through 这种方式不支持counter_cache。</p>
+
+<p>所以可以用下面的代码实现计数</p>
+
+<p>本站代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Categorization</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:post</span>
+</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:category</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">after_create</span>  <span class="ss">:increment_counter_cache</span>
+</span><span class='line'>  <span class="n">after_destroy</span> <span class="ss">:decrement_counter_cache</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">decrement_counter_cache</span>
+</span><span class='line'>    <span class="no">Category</span><span class="o">.</span><span class="n">decrement_counter</span><span class="p">(</span><span class="s2">&quot;posts_count&quot;</span><span class="p">,</span> <span class="n">category_id</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">increment_counter_cache</span>
+</span><span class='line'>    <span class="no">Category</span><span class="o">.</span><span class="n">increment_counter</span><span class="p">(</span><span class="s2">&quot;posts_count&quot;</span><span class="p">,</span> <span class="n">category_id</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/18/Sitemap_generator-to-the-rails-using-the-site-generated-Sitemap">使用sitemap_generator来为rails网站生成Sitemap</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-18T00:00:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/kjvarga/sitemap_generator">github地址</a></p>
+
+<p>sitemap描述了网站的页面架构，请看 <a href="http://zh.wikipedia.org/zh-cn/Sitemap">维基百科</a></p>
+
+<ul>
+<li>安装</li>
+</ul>
+
+
+<p>编辑Gemfile</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem <span class="s1">&#39;sitemap_generator&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>bundle install安装完成之后, 执行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake sitemap:install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>会在config目录下生成sitemap.rb</p>
+
+<p>*配置</p>
+
+<p>将SitemapGenerator::Sitemap.default_host = “http://www.example.com”里的url改为自己的网站url</p>
+
+<p>通过下列方法，可以将所有文章生成出去</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Post.all.each <span class="k">do</span> |a|
+</span><span class='line'>    sitemap.add post_path<span class="o">(</span>a<span class="o">)</span>, :lastmod <span class="o">=</span>&gt; a.updated_at
+</span><span class='line'>  end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>*生成</p>
+
+<p>在crontab定时器里运行下列命令</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake sitemap:refresh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就会生成sitemap并且向搜索引擎进行提交</p>
+
+<p>更多配置，请看 [文档]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/misc/2010/12/18/Message-using-the-disqus-system-as-a-site">使用disqus作为本站的留言系统</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-18T00:00:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>disqus是国外的一个强大的留言系统，不仅可以单对单进行留言，还可以使用facebook,twitter等帐号进行评论互动。</p>
+
+<p>首先去他们官网进行注册  <a href="http://disqus.com">disqus网址</a>
+在注册后，你会得到你的网站的一个shortname，本站是zoolblog</p>
+
+<p>然后在需要加入留言的地方加入下面的代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;disqus_thread&quot;</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span>
+</span><span class='line'><span class="sr">  &lt;script type=&quot;text/</span><span class="n">javascript</span><span class="s2">&quot;&gt;</span>
+</span><span class='line'><span class="s2">      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */</span>
+</span><span class='line'><span class="s2">      var disqus_shortname = &#39;example&#39;; // required: replace example with your forum shortname</span>
+</span><span class='line'><span class="s2">  </span>
+</span><span class='line'><span class="s2">      // The following are highly recommended additional parameters. Remove the slashes in front to use.</span>
+</span><span class='line'><span class="s2">      // var disqus_identifier = &#39;unique_dynamic_id_1234&#39;;</span>
+</span><span class='line'><span class="s2">      // var disqus_url = &#39;http://example.com/permalink-to-page.html&#39;;</span>
+</span><span class='line'><span class="s2">  </span>
+</span><span class='line'><span class="s2">      /* * * DON&#39;T EDIT BELOW THIS LINE * * */</span>
+</span><span class='line'><span class="s2">      (function() {</span>
+</span><span class='line'><span class="s2">          var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;</span>
+</span><span class='line'><span class="s2">          dsq.src = &#39;http://&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;</span>
+</span><span class='line'><span class="s2">          (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);</span>
+</span><span class='line'><span class="s2">      })();</span>
+</span><span class='line'><span class="s2">  &lt;/script&gt;</span>
+</span><span class='line'><span class="s2">  &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">disqus</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">?</span><span class="n">ref_noscript</span><span class="s2">&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</span>
+</span><span class='line'><span class="s2">  &lt;a href=&quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">disqus</span><span class="o">.</span><span class="n">com</span><span class="s2">&quot; class=&quot;</span><span class="n">dsq</span><span class="o">-</span><span class="n">brlink</span><span class="s2">&quot;&gt;blog comments powered by &lt;span class=&quot;</span><span class="n">logo</span><span class="o">-</span><span class="n">disqus</span><span class="s2">&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里有三个值要注意</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>disqus_shortname <span class="c">#为你在网站上获得shortname,本站为zoolblog</span>
+</span><span class='line'>
+</span><span class='line'>disqus_identifier <span class="c">#为当前页面的唯一值，默认为当前网页url</span>
+</span><span class='line'>
+</span><span class='line'>disqus_url <span class="c">#为页面的显示url，默认为当前网页url</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里说明一下disqus_identifier和disqus_url的区别
+disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的话，是post/creat-my-rails-app这样的格式，由于slug有时会变化，所以需要disqus_identifier来帮忙，这个是一个网页slug不管怎么变化都一致的值。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/18/Bullet-to-deal-with-the-development-of-the-N-1-rails-Asked-Questions">使用bullet来处理rails开发中的N + 1查询问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-18T00:00:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/flyerhzm/bullet">github地址</a></p>
+
+<p>在开发中，有时会碰到N + 1查询问题。</p>
+
+<p>比如说，在本Blog显示文章时， 文章的作者是由关联查询得出</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#home_controller</span>
+</span><span class='line'><span class="vi">@posts</span> <span class="o">=</span> <span class="no">Post</span><span class="o">.</span><span class="n">paginate</span> <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;created_at DESC&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#views</span>
+</span><span class='line'><span class="vi">@posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span>
+</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样，每一篇文章都会有一个查询，怎么来改进代码呢？</p>
+
+<p>首先，先安装bullet</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>
+</span><span class='line'> <span class="n">gem</span> <span class="s1">&#39;bullet&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后在config/environments/development.rb加入下面代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">alert</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">bullet_logger</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">growl</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">rails_logger</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">disable_browser_cache</span> <span class="o">=</span> <span class="kp">true</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启服务器</p>
+
+<p>之后重新访问页面时就会弹出页面来提示你，当前页面有N+1问题，可以用:include => [:user]来解决</p>
+
+<p>重新编辑home_controller</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@posts</span> <span class="o">=</span> <span class="no">Post</span><span class="o">.</span><span class="n">paginate</span> <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;created_at DESC&#39;</span><span class="p">,</span> <span class="ss">:include</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:user</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>问题解决</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/4/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/06/23/carriewave-support-for-rails-admin">增加carrierwave对rails_admin的支持</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">rails3rc1在安装rspec-rails时碰到报错</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - ZoOL -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'foxzool';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
