@@ -4,7 +4,7 @@
   <title><![CDATA[ZoOL => Blog]]></title>
   <link href="http://zool.me/atom.xml" rel="self"/>
   <link href="http://zool.me/"/>
-  <updated>2012-03-14T12:04:38+08:00</updated>
+  <updated>2012-03-28T18:43:20+08:00</updated>
   <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[在路由中添加参数]]></title>
+    <link href="http://zool.me/rails/2012/03/28/add-params-in-route"/>
+    <updated>2012-03-28T18:36:00+08:00</updated>
+    <id>http://zool.me/rails/2012/03/28/add-params-in-route</id>
+    <content type="html"><![CDATA[<p>由于业务需要， 要在两个url地址中完成类似的操作， 于是想到了在路由配置中设置参数来解决需求</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">match</span> <span class="s1">&#39;/home/action1&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;home#action1&#39;</span>
+</span><span class='line'>  <span class="n">match</span> <span class="s1">&#39;/home/action2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;home#action1&#39;</span><span class="p">,</span> <span class="ss">:has_params</span> <span class="o">=&gt;</span> <span class="s1">&#39;yes&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样就在action2的路由里添加了参数 params[:has_params], 其值为 &#8216;yes&#8217;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[设置rails中generator使用的orm类型]]></title>
@@ -1420,29 +1438,6 @@ rspec
 </span><span class='line'> <span class="o">=</span>&gt; <span class="s2">&quot;2010年12月30日 星期四 10:11:21 CST&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ruby-新年快乐]]></title>
-    <link href="http://zool.me/ruby/2010/12/29/ruby-Happy-New-Year"/>
-    <updated>2010-12-29T00:00:00+08:00</updated>
-    <id>http://zool.me/ruby/2010/12/29/ruby-Happy-New-Year</id>
-    <content type="html"><![CDATA[<p>根据网上的源码改编</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'> ruby -e <span class="s2">&quot;((1..20).to_a+[6]*4).each{|i|puts (&#39;#&#39;*i*2).center(80)};puts;puts &#39;Happy New Year&#39;.center(80)&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>关键是center方法</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="s2">&quot;Happy New Year&quot;</span>.center<span class="o">(</span>80<span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>就是将字符串在80个字符的长度内居中</p>
 ]]></content>
   </entry>
   

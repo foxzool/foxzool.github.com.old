@@ -9,9 +9,49 @@
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="首先使用apt-get安装ruby 1
-sudo apt-get install ruby 运行 ruby -v 1
-ruby 1.8.7 (2010-06-23 patchlevel 299) [i686-linux] ruby安装完毕 安装rubygems，注意,这里不要用apt-get来安装 &hellip;">
+  <meta name="description" content="在服务器上安装mysql时，报错，安装失败， 内容如下 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +118,166 @@ ruby 1.8.7 (2010-06-23 patchlevel 299) [i686-linux] ruby安装完毕 安装rubyg
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/17/gem-install-mysql2-error">Gem Install Mysql2 报错</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在服务器上安装mysql时，报错，安装失败， 内容如下</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; sudo gem install mysql
+</span><span class='line'>&gt; Building native extensions.  This could take a <span class="k">while</span>...
+</span><span class='line'>&gt; ERROR:  Error installing mysql:
+</span><span class='line'>&gt; ERROR: Failed to build gem native extension.
+</span><span class='line'>&gt; /usr/local/bin/ruby extconf.rb install mysql
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lm... yes
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lz... yes
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lsocket... no
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; checking <span class="k">for </span>main<span class="o">()</span> in -lnsl... yes
+</span><span class='line'>&gt; checking <span class="k">for </span>mysql_query<span class="o">()</span> in -lmysqlclient... no
+</span><span class='line'>&gt; extconf.rb failed
+</span><span class='line'>&gt; Could not create Makefile due to some reason, probably lack of
+</span><span class='line'>&gt; necessary libraries and/or headers.  Check the mkmf.log file <span class="k">for </span>more
+</span><span class='line'>&gt; details.  You may need configuration options.
+</span><span class='line'>
+</span><span class='line'>&gt; Provided configuration options:
+</span><span class='line'>&gt;    --with-opt-dir
+</span><span class='line'>&gt;    --without-opt-dir
+</span><span class='line'>&gt;    --with-opt-include
+</span><span class='line'>&gt;    --without-opt-include<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>&gt;    --with-opt-lib
+</span><span class='line'>&gt;    --without-opt-lib<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span><span class='line'>&gt;    --with-make-prog
+</span><span class='line'>&gt;    --without-make-prog
+</span><span class='line'>&gt;    --srcdir<span class="o">=</span>.
+</span><span class='line'>&gt;    --curdir
+</span><span class='line'>&gt;    --ruby<span class="o">=</span>/usr/local/bin/ruby
+</span><span class='line'>&gt;    --with-mysql-config
+</span><span class='line'>&gt;    --without-mysql-config
+</span><span class='line'>&gt;    --with-mysql-dir
+</span><span class='line'>&gt;    --without-mysql-dir
+</span><span class='line'>&gt;    --with-mysql-include
+</span><span class='line'>&gt;    --without-mysql-include<span class="o">=</span><span class="k">${</span><span class="nv">mysql</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>&gt;    --with-mysql-lib
+</span><span class='line'>&gt;    --without-mysql-lib<span class="o">=</span><span class="k">${</span><span class="nv">mysql</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-mlib
+</span><span class='line'>&gt;    --without-mlib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-zlib
+</span><span class='line'>&gt;    --without-zlib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-socketlib
+</span><span class='line'>&gt;    --without-socketlib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span><span class='line'>&gt;    --with-nsllib
+</span><span class='line'>&gt;    --without-nsllib
+</span><span class='line'>&gt;    --with-mysqlclientlib
+</span><span class='line'>&gt;    --without-mysqlclientlib
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>经检查，是由于我将mysql调整了安装目录导致， 执行下面代码后安装成功.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo gem install mysql -- --with-mysql-config<span class="o">=</span>/usr/local/mysql/bin/mysql_config
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -959,6 +1159,10 @@ rails已经有一个配置文件了，在/paht/to/site/config/initializers/infle
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/rails/2012/03/28/add-params-in-route">在路由中添加参数</a>
+      </li>
+    
+      <li class="post">
         <a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a>
       </li>
     
@@ -972,10 +1176,6 @@ rails已经有一个配置文件了，在/paht/to/site/config/initializers/infle
     
       <li class="post">
         <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
-      </li>
-    
-      <li class="post">
-        <a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">rails3rc1在安装rspec-rails时碰到报错</a>
       </li>
     
   </ul>

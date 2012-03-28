@@ -9,8 +9,7 @@
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="rails默认使用的是prototype这个库，如果要替换为jquery的话，按下面步骤做 首先替换public/javascript/rails.js为jquery的版本,
-从github下载 覆盖public/javascript/rails.js 然后下载jquery 放到pubic/ &hellip;">
+  <meta name="description" content="根据网上的源码改编 1 ruby -e &quot;((1..20).to_a+[6]*4).each{|i|puts (&#39;#&#39;*i*2).center(80)};puts;puts &#39;Happy New Year&#39;.center(80)&quot; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/29/ruby-Happy-New-Year">Ruby-新年快乐</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>根据网上的源码改编</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> ruby -e <span class="s2">&quot;((1..20).to_a+[6]*4).each{|i|puts (&#39;#&#39;*i*2).center(80)};puts;puts &#39;Happy New Year&#39;.center(80)&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>关键是center方法</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="s2">&quot;Happy New Year&quot;</span>.center<span class="o">(</span>80<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就是将字符串在80个字符的长度内居中</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -888,110 +937,6 @@ disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/rails/2010/12/18/Bullet-to-deal-with-the-development-of-the-N-1-rails-Asked-Questions">使用bullet来处理rails开发中的N + 1查询问题</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-18T00:00:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/flyerhzm/bullet">github地址</a></p>
-
-<p>在开发中，有时会碰到N + 1查询问题。</p>
-
-<p>比如说，在本Blog显示文章时， 文章的作者是由关联查询得出</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#home_controller</span>
-</span><span class='line'><span class="vi">@posts</span> <span class="o">=</span> <span class="no">Post</span><span class="o">.</span><span class="n">paginate</span> <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;created_at DESC&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#views</span>
-</span><span class='line'><span class="vi">@posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span>
-</span><span class='line'><span class="n">post</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span>
-</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这样，每一篇文章都会有一个查询，怎么来改进代码呢？</p>
-
-<p>首先，先安装bullet</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>
-</span><span class='line'> <span class="n">gem</span> <span class="s1">&#39;bullet&#39;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后在config/environments/development.rb加入下面代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="kp">true</span>
-</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">alert</span> <span class="o">=</span> <span class="kp">true</span>
-</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">bullet_logger</span> <span class="o">=</span> <span class="kp">true</span>
-</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="kp">true</span>
-</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">growl</span> <span class="o">=</span> <span class="kp">false</span>
-</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">rails_logger</span> <span class="o">=</span> <span class="kp">true</span>
-</span><span class='line'>  <span class="no">Bullet</span><span class="o">.</span><span class="n">disable_browser_cache</span> <span class="o">=</span> <span class="kp">true</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>重启服务器</p>
-
-<p>之后重新访问页面时就会弹出页面来提示你，当前页面有N+1问题，可以用:include => [:user]来解决</p>
-
-<p>重新编辑home_controller</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@posts</span> <span class="o">=</span> <span class="no">Post</span><span class="o">.</span><span class="n">paginate</span> <span class="ss">:page</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;created_at DESC&#39;</span><span class="p">,</span> <span class="ss">:include</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:user</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>问题解决</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1009,6 +954,10 @@ disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/rails/2012/03/28/add-params-in-route">在路由中添加参数</a>
+      </li>
+    
+      <li class="post">
         <a href="/rails/2011/06/27/setup-rails-generator-orm">设置rails中generator使用的orm类型</a>
       </li>
     
@@ -1022,10 +971,6 @@ disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的�
     
       <li class="post">
         <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
-      </li>
-    
-      <li class="post">
-        <a href="/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec">rails3rc1在安装rspec-rails时碰到报错</a>
       </li>
     
   </ul>

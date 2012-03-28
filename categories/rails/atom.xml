@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | ZoOL => Blog]]></title>
   <link href="http://zool.me/categories/rails/atom.xml" rel="self"/>
   <link href="http://zool.me/"/>
-  <updated>2012-03-14T12:04:38+08:00</updated>
+  <updated>2012-03-28T18:43:20+08:00</updated>
   <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[在路由中添加参数]]></title>
+    <link href="http://zool.me/rails/2012/03/28/add-params-in-route"/>
+    <updated>2012-03-28T18:36:00+08:00</updated>
+    <id>http://zool.me/rails/2012/03/28/add-params-in-route</id>
+    <content type="html"><![CDATA[<p>由于业务需要， 要在两个url地址中完成类似的操作， 于是想到了在路由配置中设置参数来解决需求</p>
+
+<p><code>ruby
+  match '/home/action1' =&gt; 'home#action1'
+  match '/home/action2' =&gt; 'home#action1', :has_params =&gt; 'yes'
+</code></p>
+
+<p>这样就在action2的路由里添加了参数 params[:has_params], 其值为 'yes'</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[设置rails中generator使用的orm类型]]></title>
@@ -192,37 +208,6 @@ end
 <h1>注意</h1>
 
 <p>rails-footnotes默认使用textmate来编辑当前页面文件， 如果要自定义配置编辑器， 请看<a href="http://rubydoc.info/gems/rails-footnotes/3.7.4/file/README.rdoc">rails-footnotes文档</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[rails3rc1在安装rspec-rails时碰到报错]]></title>
-    <link href="http://zool.me/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec"/>
-    <updated>2011-05-23T00:00:00+08:00</updated>
-    <id>http://zool.me/rails/2011/05/23/rails3rc1-rspec-invaild-gemspec</id>
-    <content type="html"><![CDATA[<h1>今天在rails3rc1下安装rspec-rails, 提示了以下错误</h1>
-
-<p><code>bash
-Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.8.7-p334/specifications/rspec-core-2.6.2.gemspec]: invalid date format in specification: "2011-05-21 00:00:00.000000000Z"
-</code></p>
-
-<h1>解决方法</h1>
-
-<p>找到specifications/rspec-core-2.6.2.gemspec， 将下面这行注释
-<code>bash
-s.date = %q{2011-05-21 00:00:00.000000000Z}
-</code></p>
-
-<h1>另外在执行rake命令时， 遇到了下面的报错信息</h1>
-
-<p><code>bash
-undefined method `prerequisites' for nil:NilClass
-</code></p>
-
-<p>google后发现是rspec-rails版本的问题， 使用2.6.1.beta1版本以上就好了， 编辑Gemfile
-<code>bash
-  gem 'rspec-rails', '~&gt; 2.6.1.beta'
-</code></p>
 ]]></content>
   </entry>
   
