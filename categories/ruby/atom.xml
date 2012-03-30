@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | ZoOL => Blog]]></title>
   <link href="http://zool.me/categories/ruby/atom.xml" rel="self"/>
   <link href="http://zool.me/"/>
-  <updated>2012-03-30T15:35:48+08:00</updated>
+  <updated>2012-03-30T15:49:16+08:00</updated>
   <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[remove_invaild_gemspec_warning]]></title>
+    <title type="html"><![CDATA[去除invaild gemspec警告]]></title>
     <link href="http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning"/>
     <updated>2012-03-30T15:22:00+08:00</updated>
     <id>http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning</id>
