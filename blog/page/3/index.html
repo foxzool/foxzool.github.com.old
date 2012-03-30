@@ -9,7 +9,8 @@
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="根据网上的源码改编 1 ruby -e &quot;((1..20).to_a+[6]*4).each{|i|puts (&#39;#&#39;*i*2).center(80)};puts;puts &#39;Happy New Year&#39;.center(80)&quot; &hellip;">
+  <meta name="description" content="rails默认为英文，像一些model的验证提示都是英文。
+按下面方法将其汉化 首先，在https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale下载相应的语言包 中文选择 zh-CN.yml ,将其下载到config/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +77,67 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/rails/2010/12/30/Chinese-rails-configuration">Rails中文配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-30T00:00:00+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>rails默认为英文，像一些model的验证提示都是英文。
+按下面方法将其汉化</p>
+
+<p>首先，在<a href="https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale">https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale</a>下载相应的语言包</p>
+
+<p>中文选择 zh-CN.yml   ,将其下载到config/locale下面</p>
+
+<p>然后在config/application.rb里加入下面的配置</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>config.i18n.default_locale <span class="o">=</span> :<span class="s1">&#39;zh-CN&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这句话的意思是将rails的语言包默认为简体中文</p>
+
+<p>然后重启服务器即可</p>
+
+<p>效果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby-1.8.7-p302 &gt; I18n.l Time.now
+</span><span class='line'> <span class="o">=</span>&gt; <span class="s2">&quot;2010年12月30日 星期四 10:11:21 CST&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -839,104 +901,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/misc/2010/12/18/Message-using-the-disqus-system-as-a-site">使用disqus作为本站的留言系统</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-18T00:00:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>disqus是国外的一个强大的留言系统，不仅可以单对单进行留言，还可以使用facebook,twitter等帐号进行评论互动。</p>
-
-<p>首先去他们官网进行注册  <a href="http://disqus.com">disqus网址</a>
-在注册后，你会得到你的网站的一个shortname，本站是zoolblog</p>
-
-<p>然后在需要加入留言的地方加入下面的代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;disqus_thread&quot;</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span>
-</span><span class='line'><span class="sr">  &lt;script type=&quot;text/</span><span class="n">javascript</span><span class="s2">&quot;&gt;</span>
-</span><span class='line'><span class="s2">      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */</span>
-</span><span class='line'><span class="s2">      var disqus_shortname = &#39;example&#39;; // required: replace example with your forum shortname</span>
-</span><span class='line'><span class="s2">  </span>
-</span><span class='line'><span class="s2">      // The following are highly recommended additional parameters. Remove the slashes in front to use.</span>
-</span><span class='line'><span class="s2">      // var disqus_identifier = &#39;unique_dynamic_id_1234&#39;;</span>
-</span><span class='line'><span class="s2">      // var disqus_url = &#39;http://example.com/permalink-to-page.html&#39;;</span>
-</span><span class='line'><span class="s2">  </span>
-</span><span class='line'><span class="s2">      /* * * DON&#39;T EDIT BELOW THIS LINE * * */</span>
-</span><span class='line'><span class="s2">      (function() {</span>
-</span><span class='line'><span class="s2">          var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;</span>
-</span><span class='line'><span class="s2">          dsq.src = &#39;http://&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;</span>
-</span><span class='line'><span class="s2">          (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);</span>
-</span><span class='line'><span class="s2">      })();</span>
-</span><span class='line'><span class="s2">  &lt;/script&gt;</span>
-</span><span class='line'><span class="s2">  &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">disqus</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">?</span><span class="n">ref_noscript</span><span class="s2">&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</span>
-</span><span class='line'><span class="s2">  &lt;a href=&quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">disqus</span><span class="o">.</span><span class="n">com</span><span class="s2">&quot; class=&quot;</span><span class="n">dsq</span><span class="o">-</span><span class="n">brlink</span><span class="s2">&quot;&gt;blog comments powered by &lt;span class=&quot;</span><span class="n">logo</span><span class="o">-</span><span class="n">disqus</span><span class="s2">&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这里有三个值要注意</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>disqus_shortname <span class="c">#为你在网站上获得shortname,本站为zoolblog</span>
-</span><span class='line'>
-</span><span class='line'>disqus_identifier <span class="c">#为当前页面的唯一值，默认为当前网页url</span>
-</span><span class='line'>
-</span><span class='line'>disqus_url <span class="c">#为页面的显示url，默认为当前网页url</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这里说明一下disqus_identifier和disqus_url的区别
-disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的话，是post/creat-my-rails-app这样的格式，由于slug有时会变化，所以需要disqus_identifier来帮忙，这个是一个网页slug不管怎么变化都一致的值。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -954,6 +918,10 @@ disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/ruby/2012/03/30/remove-invaild-gemspec-warning">remove_invaild_gemspec_warning</a>
+      </li>
+    
+      <li class="post">
         <a href="/rails/2012/03/28/add-params-in-route">在路由中添加参数</a>
       </li>
     
@@ -967,10 +935,6 @@ disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的�
     
       <li class="post">
         <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="在服务器上安装mysql时，报错，安装失败， 内容如下 1
+  <meta name="description" content="在安装pg时，系统报了如下的错误 1
 2
 3
 4
@@ -40,18 +40,7 @@
 29
 30
 31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43 &hellip;">
+/home/zool/.rvm/rubies/ruby-1.8.7-p302/bin/ruby &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -118,6 +107,116 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2010/12/17/gem-install-pg-error-under-ubuntu">Ubuntu下gem安装pg出错</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在安装pg时，系统报了如下的错误</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>/home/zool/.rvm/rubies/ruby-1.8.7-p302/bin/ruby extconf.rb
+</span><span class='line'>checking <span class="k">for </span>pg_config... no
+</span><span class='line'>checking <span class="k">for </span>libpq-fe.h... no
+</span><span class='line'>Can<span class="s1">&#39;t find the &#39;</span>libpq-fe.h header
+</span><span class='line'>*** extconf.rb failed ***
+</span><span class='line'>Could not create Makefile due to some reason, probably lack of
+</span><span class='line'>necessary libraries and/or headers.  Check the mkmf.log file <span class="k">for </span>more
+</span><span class='line'>details.  You may need configuration options.
+</span><span class='line'>
+</span><span class='line'>Provided configuration options:
+</span><span class='line'>  --with-opt-dir
+</span><span class='line'>--without-opt-dir
+</span><span class='line'>--with-opt-include
+</span><span class='line'>--without-opt-include<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>--with-opt-lib
+</span><span class='line'>--without-opt-lib<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span><span class='line'>--with-make-prog
+</span><span class='line'>--without-make-prog
+</span><span class='line'>--srcdir<span class="o">=</span>.
+</span><span class='line'>--curdir
+</span><span class='line'>--ruby<span class="o">=</span>/home/zool/.rvm/rubies/ruby-1.8.7-p302/bin/ruby
+</span><span class='line'>--with-pg
+</span><span class='line'>--without-pg
+</span><span class='line'>--with-pg-config
+</span><span class='line'>--without-pg-config
+</span><span class='line'>--with-pg-dir
+</span><span class='line'>--without-pg-dir
+</span><span class='line'>--with-pg-include
+</span><span class='line'>--without-pg-include<span class="o">=</span><span class="k">${</span><span class="nv">pg</span><span class="p">-dir</span><span class="k">}</span>/include
+</span><span class='line'>--with-pg-lib
+</span><span class='line'>--without-pg-lib<span class="o">=</span><span class="k">${</span><span class="nv">pg</span><span class="p">-dir</span><span class="k">}</span>/lib
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>请教GOOGLE大神后，找到如下解决方案</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install libpq-dev libpq5
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装更新后解决问题</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1159,6 +1258,10 @@ rails已经有一个配置文件了，在/paht/to/site/config/initializers/infle
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/ruby/2012/03/30/remove-invaild-gemspec-warning">remove_invaild_gemspec_warning</a>
+      </li>
+    
+      <li class="post">
         <a href="/rails/2012/03/28/add-params-in-route">在路由中添加参数</a>
       </li>
     
@@ -1172,10 +1275,6 @@ rails已经有一个配置文件了，在/paht/to/site/config/initializers/infle
     
       <li class="post">
         <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
       </li>
     
   </ul>

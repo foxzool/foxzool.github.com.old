@@ -4,7 +4,7 @@
   <title><![CDATA[ZoOL => Blog]]></title>
   <link href="http://zool.me/atom.xml" rel="self"/>
   <link href="http://zool.me/"/>
-  <updated>2012-03-28T18:43:20+08:00</updated>
+  <updated>2012-03-30T15:35:48+08:00</updated>
   <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[remove_invaild_gemspec_warning]]></title>
+    <link href="http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning"/>
+    <updated>2012-03-30T15:22:00+08:00</updated>
+    <id>http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning</id>
+    <content type="html"><![CDATA[<p>在某些版本gems里，由于spac日期解析的问题， 会有一些Invaild gemspec的警告</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.9.3-p0/specifications/oauth2-0.5.2.gemspec]: invalid date format in specification: "2012-01-04 00:00:00.000000000Z"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>用手工去除gemspec文件， 比较麻烦
+另一种是直接用代码实现</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/*/specifications/*.gemspec</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在路由中添加参数]]></title>
@@ -1402,40 +1422,6 @@ rspec
 </span><span class='line'> <span class="o">=</span>&gt; <span class="o">[</span><span class="c">#&lt;User id: 1, username: &quot;zool&quot;, created_at: &quot;2010-12-30 12:09:42&quot;, updated_at: &quot;2010-12-30 12:09:42&quot;, deleted: true&gt;] </span>
 </span><span class='line'>&gt;User.where<span class="o">(</span><span class="s2">&quot;id = 1&quot;</span><span class="o">)</span>.to_sql
 </span><span class='line'> <span class="o">=</span>&gt; <span class="s2">&quot;SELECT \&quot;users\&quot;.* FROM \&quot;users\&quot; WHERE ((\&quot;users\&quot;.\&quot;deleted\&quot; IS NULL OR \&quot;users\&quot;.\&quot;deleted\&quot; = &#39;f&#39;)) AND (id = 1)&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[rails中文配置]]></title>
-    <link href="http://zool.me/rails/2010/12/30/Chinese-rails-configuration"/>
-    <updated>2010-12-30T00:00:00+08:00</updated>
-    <id>http://zool.me/rails/2010/12/30/Chinese-rails-configuration</id>
-    <content type="html"><![CDATA[<p>rails默认为英文，像一些model的验证提示都是英文。
-按下面方法将其汉化</p>
-
-<p>首先，在<a href="https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale">https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale</a>下载相应的语言包</p>
-
-<p>中文选择 zh-CN.yml   ,将其下载到config/locale下面</p>
-
-<p>然后在config/application.rb里加入下面的配置</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>config.i18n.default_locale <span class="o">=</span> :<span class="s1">&#39;zh-CN&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这句话的意思是将rails的语言包默认为简体中文</p>
-
-<p>然后重启服务器即可</p>
-
-<p>效果</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby-1.8.7-p302 &gt; I18n.l Time.now
-</span><span class='line'> <span class="o">=</span>&gt; <span class="s2">&quot;2010年12月30日 星期四 10:11:21 CST&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>

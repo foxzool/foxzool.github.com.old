@@ -5,21 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>rails趣谈'为什么rails在Array中有个forty_two方法' - ZoOL => Blog</title>
+  <title>remove_invaild_gemspec_warning - ZoOL => Blog</title>
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="有次，群里有人问，为什么在rails的Array中有个forty_two方法 先看代码 1
-2
-3
-4
-5
-6
-7
-&gt; irb
-&gt;&gt; require &#39;activesupport&#39;
-=&gt; true
-&gt;&gt; a = Array.new(50). &hellip;">
+  <meta name="description" content="在某些版本gems里，由于spac日期解析的问题， 会有一些Invaild gemspec的警告 1
+Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.9.3-p0/specifications/oauth2-0.5.2.gemspec]: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -28,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zool.me/rails/2010/12/17/rails-Something-about-why-rails-have-a-forty_two-in-Array-method">
+  <link rel="canonical" href="http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -89,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">rails趣谈'为什么rails在Array中有个forty_two方法'</h1>
+      <h1 class="entry-title">Remove_invaild_gemspec_warning</h1>
     
     
       <p class="meta">
@@ -105,41 +96,25 @@
   
 
 
-<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+<time datetime="2012-03-30T15:22:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>有次，群里有人问，为什么在rails的Array中有个forty_two方法</p>
+<div class="entry-content"><p>在某些版本gems里，由于spac日期解析的问题， 会有一些Invaild gemspec的警告</p>
 
-<p>先看代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="n">irb</span>
-</span><span class='line'><span class="o">&gt;&gt;</span> <span class="nb">require</span> <span class="s1">&#39;activesupport&#39;</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="kp">true</span>
-</span><span class='line'><span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">+=</span><span class="mi">1</span> <span class="p">}</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">50</span><span class="o">]</span>
-</span><span class='line'><span class="o">&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">forty_two</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="mi">42</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.9.3-p0/specifications/oauth2-0.5.2.gemspec]: invalid date format in specification: "2012-01-04 00:00:00.000000000Z"</span></code></pre></td></tr></table></div></figure>
 
 
-<p>经过网上一番探索，在这个网页得到了答案 <a href="http://www.kerrybuckley.org/2008/11/24/my-very-small-part-in-the-arrayforty_two-controversy/">网址</a></p>
+<p>用手工去除gemspec文件， 比较麻烦
+另一种是直接用代码实现</p>
 
-<p>在rails2.2时代， 有些人扩展了Array方法，从Array#second写到了Array#tenth。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/*/specifications/*.gemspec</span></code></pre></td></tr></table></div></figure>
 
-<p>这太混乱了，于是DHH发话，只保留 second, third, fourth and fifth 但增加一个forty_two， 为什么呢？</p>
-
-<p>因为这是 <a href="http://zh.wikipedia.org/zh-cn/%E7%94%9F%E5%91%BD%E3%80%81%E5%AE%87%E5%AE%99%E4%BB%A5%E5%8F%8A%E4%BB%BB%E4%BD%95%E4%BA%8B%E6%83%85%E7%9A%84%E7%B5%82%E6%A5%B5%E7%AD%94%E6%A1%88">生命、宇宙以及任何事情的终极答案</a></p>
 </div>
 
 
@@ -162,12 +137,12 @@
   
 
 
-<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+<time datetime="2012-03-30T15:22:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/categories/rails/'>rails</a>
+    <a class='category' href='/categories/ruby/'>ruby</a>
   
 </span>
 
@@ -176,7 +151,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zool.me/rails/2010/12/17/rails-Something-about-why-rails-have-a-forty_two-in-Array-method" data-via="" data-counturl="http://zool.me/rails/2010/12/17/rails-Something-about-why-rails-have-a-forty_two-in-Array-method" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning" data-via="" data-counturl="http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -189,10 +164,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/ubuntu/2010/12/17/open-ssh-without-password" title="Previous Post: 开启ssh无密码登录">&laquo; 开启ssh无密码登录</a>
+        <a class="basic-alignment left" href="/rails/2012/03/28/add-params-in-route" title="Previous Post: 在路由中添加参数">&laquo; 在路由中添加参数</a>
       
-      
-        <a class="basic-alignment right" href="/ruby/2010/12/17/ruby-array-of-fill-method" title="Next Post: ruby数组填充方法">ruby数组填充方法 &raquo;</a>
       
     </p>
   </footer>
@@ -288,8 +261,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zool.me/rails/2010/12/17/rails-Something-about-why-rails-have-a-forty_two-in-Array-method';
-        var disqus_url = 'http://zool.me/rails/2010/12/17/rails-Something-about-why-rails-have-a-forty_two-in-Array-method';
+        var disqus_identifier = 'http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning';
+        var disqus_url = 'http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning';
         var disqus_script = 'embed.js';
       
     (function () {

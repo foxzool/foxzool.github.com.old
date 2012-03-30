@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | ZoOL => Blog]]></title>
   <link href="http://zool.me/categories/ruby/atom.xml" rel="self"/>
   <link href="http://zool.me/"/>
-  <updated>2012-03-28T18:43:20+08:00</updated>
+  <updated>2012-03-30T15:35:48+08:00</updated>
   <id>http://zool.me/</id>
   <author>
     <name><![CDATA[ZoOL]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[remove_invaild_gemspec_warning]]></title>
+    <link href="http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning"/>
+    <updated>2012-03-30T15:22:00+08:00</updated>
+    <id>http://zool.me/ruby/2012/03/30/remove-invaild-gemspec-warning</id>
+    <content type="html"><![CDATA[<p>在某些版本gems里，由于spac日期解析的问题， 会有一些Invaild gemspec的警告</p>
+
+<p><code>
+Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.9.3-p0/specifications/oauth2-0.5.2.gemspec]: invalid date format in specification: "2012-01-04 00:00:00.000000000Z"
+</code></p>
+
+<p>用手工去除gemspec文件， 比较麻烦
+另一种是直接用代码实现</p>
+
+<p><code>
+perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/*/specifications/*.gemspec
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[修复安装gems时Errno::ETIMEDOUT: Operation timed out - connect(2)的错误]]></title>
@@ -121,111 +141,6 @@ sc-server
 "Happy New Year".center(80)
 </code>
 就是将字符串在80个字符的长度内居中</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[使用to_lang翻译ruby字符串]]></title>
-    <link href="http://zool.me/ruby/2010/12/29/Ruby-string-translation-using-to_lang"/>
-    <updated>2010-12-29T00:00:00+08:00</updated>
-    <id>http://zool.me/ruby/2010/12/29/Ruby-string-translation-using-to_lang</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/jimmycuadra/to_lang">github地址</a></p>
-
-<p>我的博客就是用这个gem来翻译文章标题的</p>
-
-<h1>安装</h1>
-
-<p><code>bash
-gem install to_lang
-</code></p>
-
-<h1>使用</h1>
-
-<p>ToLang必须初始配置一个google api key</p>
-
-<p><a href="https://code.google.com/apis/console">api key 获取地址</a></p>
-
-<p><code>ruby
-require ‘to_lang’
-ToLang.start(‘YOUR_GOOGLE_TRANSLATE_API_KEY’)
-</code></p>
-
-<p>然后就可以变魔术了
-``` ruby</p>
-
-<blockquote><p>'你好'.to_english
- => "Hello"
-'hotfix'.to_simplified_chinese
- => "修复"
-"Rails 有非常強大的路徑指派功能，讓我們看看有哪些設定方式吧".to_simplified_chinese_from_traditional_chinese
- => "Rails 有非常强大的路径指派功能，让我们看看有哪些设定方式吧"
-```</p></blockquote>
-
-<p>也可以直接用String#translate方法
-<code>ruby
-“hello world”.translate(‘es’)
-=&gt; “hola mundo”
-“a pie”.translate(‘es’, :from =&gt; ‘en’)
-=&gt; “un pastel”
-</code></p>
-
-<h1>所有支持的语言</h1>
-
-<p><code>bash
-to_afrikaans
-to_albanian
-to_arabic
-to_basque
-to_belarusian
-to_bulgarian
-to_catalan
-to_simplified_chinese
-to_traditional_chinese
-to_croatian
-to_czech
-to_danish
-to_dutch
-to_english
-to_estonian
-to_filipino
-to_finnish
-to_french
-to_galician
-to_german
-to_greek
-to_haitian_creole
-to_hebrew
-to_hindi
-to_hungarian
-to_icelandic
-to_indonesian
-to_irish
-to_italian
-to_japanese
-to_latvian
-to_lithuanian
-to_macedonian
-to_malay
-to_maltese
-to_norwegian
-to_persian
-to_polish
-to_portuguese
-to_romanian
-to_russian
-to_serbian
-to_slovak
-to_slovenian
-to_spanish
-to_swahili
-to_swedish
-to_thai
-to_turkish
-to_ukrainian
-to_vietnamese
-to_welsh
-to_yiddish
-</code></p>
 ]]></content>
   </entry>
   

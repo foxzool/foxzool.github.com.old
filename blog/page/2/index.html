@@ -9,9 +9,13 @@
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="下述内容参考了A Guide to a Nginx, Passenger and RVM Server 首先， 使用 root 帐号登录， 安装git和curl 1
-apt-get install curl git-core 使用脚本安装rvm 1
-bash &lt; &lt;(curl -L &hellip;">
+  <meta name="description" content="sproutcore是通过rubygems来安装的 1
+gem install sproutcore 建立应用 1
+sc-init HelloWorld 启动应用 1
+2
+cd HelloWorld
+sc-server 便会通过启动thin在locahost:4020提供应用服务
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +82,65 @@ bash &lt; &lt;(curl -L &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2011/02/22/Application-to-establish-sproutcore">建立sproutcore应用</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-22T00:00:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>sproutcore是通过rubygems来安装的</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install sproutcore
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>建立应用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sc-init HelloWorld
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>启动应用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>HelloWorld
+</span><span class='line'>sc-server
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>便会通过启动thin在locahost:4020提供应用服务</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1300,67 +1363,6 @@ rspec
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/rails/2010/12/30/Chinese-rails-configuration">Rails中文配置</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-30T00:00:00+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>rails默认为英文，像一些model的验证提示都是英文。
-按下面方法将其汉化</p>
-
-<p>首先，在<a href="https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale">https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale</a>下载相应的语言包</p>
-
-<p>中文选择 zh-CN.yml   ,将其下载到config/locale下面</p>
-
-<p>然后在config/application.rb里加入下面的配置</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>config.i18n.default_locale <span class="o">=</span> :<span class="s1">&#39;zh-CN&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这句话的意思是将rails的语言包默认为简体中文</p>
-
-<p>然后重启服务器即可</p>
-
-<p>效果</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby-1.8.7-p302 &gt; I18n.l Time.now
-</span><span class='line'> <span class="o">=</span>&gt; <span class="s2">&quot;2010年12月30日 星期四 10:11:21 CST&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1378,6 +1380,10 @@ rspec
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/ruby/2012/03/30/remove-invaild-gemspec-warning">remove_invaild_gemspec_warning</a>
+      </li>
+    
+      <li class="post">
         <a href="/rails/2012/03/28/add-params-in-route">在路由中添加参数</a>
       </li>
     
@@ -1391,10 +1397,6 @@ rspec
     
       <li class="post">
         <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
       </li>
     
   </ul>

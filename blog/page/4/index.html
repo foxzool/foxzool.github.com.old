@@ -9,16 +9,10 @@
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="github地址 在开发中，有时会碰到N + 1查询问题。 比如说，在本Blog显示文章时， 文章的作者是由关联查询得出 1
+  <meta name="description" content="disqus是国外的一个强大的留言系统，不仅可以单对单进行留言，还可以使用facebook,twitter等帐号进行评论互动。 首先去他们官网进行注册 disqus网址
+在注册后，你会得到你的网站的一个shortname，本站是zoolblog 然后在需要加入留言的地方加入下面的代码 1
 2
-3
-4
-5
-6
-7
-8
-#home_controller
-@posts = Post.paginate :page =&gt; params[:page], : &hellip;">
+3 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +79,104 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/misc/2010/12/18/Message-using-the-disqus-system-as-a-site">使用disqus作为本站的留言系统</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-18T00:00:00+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>disqus是国外的一个强大的留言系统，不仅可以单对单进行留言，还可以使用facebook,twitter等帐号进行评论互动。</p>
+
+<p>首先去他们官网进行注册  <a href="http://disqus.com">disqus网址</a>
+在注册后，你会得到你的网站的一个shortname，本站是zoolblog</p>
+
+<p>然后在需要加入留言的地方加入下面的代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;disqus_thread&quot;</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span>
+</span><span class='line'><span class="sr">  &lt;script type=&quot;text/</span><span class="n">javascript</span><span class="s2">&quot;&gt;</span>
+</span><span class='line'><span class="s2">      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */</span>
+</span><span class='line'><span class="s2">      var disqus_shortname = &#39;example&#39;; // required: replace example with your forum shortname</span>
+</span><span class='line'><span class="s2">  </span>
+</span><span class='line'><span class="s2">      // The following are highly recommended additional parameters. Remove the slashes in front to use.</span>
+</span><span class='line'><span class="s2">      // var disqus_identifier = &#39;unique_dynamic_id_1234&#39;;</span>
+</span><span class='line'><span class="s2">      // var disqus_url = &#39;http://example.com/permalink-to-page.html&#39;;</span>
+</span><span class='line'><span class="s2">  </span>
+</span><span class='line'><span class="s2">      /* * * DON&#39;T EDIT BELOW THIS LINE * * */</span>
+</span><span class='line'><span class="s2">      (function() {</span>
+</span><span class='line'><span class="s2">          var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;</span>
+</span><span class='line'><span class="s2">          dsq.src = &#39;http://&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;</span>
+</span><span class='line'><span class="s2">          (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);</span>
+</span><span class='line'><span class="s2">      })();</span>
+</span><span class='line'><span class="s2">  &lt;/script&gt;</span>
+</span><span class='line'><span class="s2">  &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">disqus</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">?</span><span class="n">ref_noscript</span><span class="s2">&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</span>
+</span><span class='line'><span class="s2">  &lt;a href=&quot;</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">disqus</span><span class="o">.</span><span class="n">com</span><span class="s2">&quot; class=&quot;</span><span class="n">dsq</span><span class="o">-</span><span class="n">brlink</span><span class="s2">&quot;&gt;blog comments powered by &lt;span class=&quot;</span><span class="n">logo</span><span class="o">-</span><span class="n">disqus</span><span class="s2">&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里有三个值要注意</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>disqus_shortname <span class="c">#为你在网站上获得shortname,本站为zoolblog</span>
+</span><span class='line'>
+</span><span class='line'>disqus_identifier <span class="c">#为当前页面的唯一值，默认为当前网页url</span>
+</span><span class='line'>
+</span><span class='line'>disqus_url <span class="c">#为页面的显示url，默认为当前网页url</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里说明一下disqus_identifier和disqus_url的区别
+disqus_url一般是网页的slug， 比如说post/1可以用slug方式显示的话，是post/creat-my-rails-app这样的格式，由于slug有时会变化，所以需要disqus_identifier来帮忙，这个是一个网页slug不管怎么变化都一致的值。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -962,116 +1054,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/ruby/2010/12/17/gem-install-pg-error-under-ubuntu">Ubuntu下gem安装pg出错</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在安装pg时，系统报了如下的错误</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>/home/zool/.rvm/rubies/ruby-1.8.7-p302/bin/ruby extconf.rb
-</span><span class='line'>checking <span class="k">for </span>pg_config... no
-</span><span class='line'>checking <span class="k">for </span>libpq-fe.h... no
-</span><span class='line'>Can<span class="s1">&#39;t find the &#39;</span>libpq-fe.h header
-</span><span class='line'>*** extconf.rb failed ***
-</span><span class='line'>Could not create Makefile due to some reason, probably lack of
-</span><span class='line'>necessary libraries and/or headers.  Check the mkmf.log file <span class="k">for </span>more
-</span><span class='line'>details.  You may need configuration options.
-</span><span class='line'>
-</span><span class='line'>Provided configuration options:
-</span><span class='line'>  --with-opt-dir
-</span><span class='line'>--without-opt-dir
-</span><span class='line'>--with-opt-include
-</span><span class='line'>--without-opt-include<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/include
-</span><span class='line'>--with-opt-lib
-</span><span class='line'>--without-opt-lib<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/lib
-</span><span class='line'>--with-make-prog
-</span><span class='line'>--without-make-prog
-</span><span class='line'>--srcdir<span class="o">=</span>.
-</span><span class='line'>--curdir
-</span><span class='line'>--ruby<span class="o">=</span>/home/zool/.rvm/rubies/ruby-1.8.7-p302/bin/ruby
-</span><span class='line'>--with-pg
-</span><span class='line'>--without-pg
-</span><span class='line'>--with-pg-config
-</span><span class='line'>--without-pg-config
-</span><span class='line'>--with-pg-dir
-</span><span class='line'>--without-pg-dir
-</span><span class='line'>--with-pg-include
-</span><span class='line'>--without-pg-include<span class="o">=</span><span class="k">${</span><span class="nv">pg</span><span class="p">-dir</span><span class="k">}</span>/include
-</span><span class='line'>--with-pg-lib
-</span><span class='line'>--without-pg-lib<span class="o">=</span><span class="k">${</span><span class="nv">pg</span><span class="p">-dir</span><span class="k">}</span>/lib
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>请教GOOGLE大神后，找到如下解决方案</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install libpq-dev libpq5
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>安装更新后解决问题</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1089,6 +1071,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/ruby/2012/03/30/remove-invaild-gemspec-warning">remove_invaild_gemspec_warning</a>
+      </li>
+    
+      <li class="post">
         <a href="/rails/2012/03/28/add-params-in-route">在路由中添加参数</a>
       </li>
     
@@ -1102,10 +1088,6 @@
     
       <li class="post">
         <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
       </li>
     
   </ul>

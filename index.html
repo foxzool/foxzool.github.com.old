@@ -9,8 +9,8 @@
   <meta name="author" content="ZoOL">
 
   
-  <meta name="description" content="由于业务需要， 要在两个url地址中完成类似的操作， 于是想到了在路由配置中设置参数来解决需求 1
-2 match &#39;/home/action1&#39; =&gt; &#39;home#action1&#39; match &#39;/home/action2&#39; =&gt; &# &hellip;">
+  <meta name="description" content="在某些版本gems里，由于spac日期解析的问题， 会有一些Invaild gemspec的警告 1
+Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.9.3-p0/specifications/oauth2-0.5.2.gemspec]: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/ruby/2012/03/30/remove-invaild-gemspec-warning">Remove_invaild_gemspec_warning</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-30T15:22:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在某些版本gems里，由于spac日期解析的问题， 会有一些Invaild gemspec的警告</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Invalid gemspec in [/Users/ZoOL/.rvm/gems/ruby-1.9.3-p0/specifications/oauth2-0.5.2.gemspec]: invalid date format in specification: "2012-01-04 00:00:00.000000000Z"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>用手工去除gemspec文件， 比较麻烦
+另一种是直接用代码实现</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>perl -p -i -e 's/ 00:00:00.000000000Z//' ~/.rvm/gems/*/specifications/*.gemspec</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -705,65 +752,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/ruby/2011/02/22/Application-to-establish-sproutcore">建立sproutcore应用</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-22T00:00:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>sproutcore是通过rubygems来安装的</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install sproutcore
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>建立应用</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sc-init HelloWorld
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>启动应用</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>HelloWorld
-</span><span class='line'>sc-server
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>便会通过启动thin在locahost:4020提供应用服务</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -779,6 +767,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/ruby/2012/03/30/remove-invaild-gemspec-warning">remove_invaild_gemspec_warning</a>
+      </li>
+    
+      <li class="post">
         <a href="/rails/2012/03/28/add-params-in-route">在路由中添加参数</a>
       </li>
     
@@ -792,10 +784,6 @@
     
       <li class="post">
         <a href="/rails/2011/05/26/rails31rc1-execjs-error">rails3.1rc1在服务器上运行报Could not find a JavaScript runtime错误的解决方法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/rails/2011/05/26/rails-footnotes">rails调试插件rails-footnotes使用说明</a>
       </li>
     
   </ul>
